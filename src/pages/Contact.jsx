@@ -11,43 +11,43 @@ function Contact() {
           alt="Contact"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
+        <div className="hero-overlay"></div>
         <div className="relative text-center px-6">
-          <p className="text-[#b8860b] text-sm tracking-[0.3em] uppercase mb-4 fade-in">Get in Touch</p>
+          <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 fade-in font-medium">Get in Touch</p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold slide-up">
-            Contact <span className="text-[#b8860b]">Us</span>
+            Contact <span className="text-gradient">Us</span>
           </h1>
-          <p className="mt-6 text-lg max-w-xl mx-auto text-white/80">
+          <p className="mt-6 text-lg max-w-xl mx-auto text-white/80 font-light">
             We'd love to hear from you
           </p>
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 px-6 bg-[#faf8f5]">
+      <section className="py-32 px-6 bg-[#f8f6f1]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
-            <div className="bg-white p-10 shadow-2xl">
-              <p className="text-[#b8860b] text-sm tracking-[0.3em] uppercase mb-4">Send a Message</p>
-              <h2 className="text-3xl font-display font-semibold text-[#1a1a1a] mb-8">
-                We'd Love to <span className="text-[#b8860b]">Hear</span> From You
+            <div className="bg-white p-10 md:p-12 shadow-[0_24px_80px_rgba(0,0,0,0.06)]">
+              <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Send a Message</p>
+              <h2 className="text-3xl font-display font-semibold text-[#0a0a0a] mb-10">
+                We'd Love to <span className="text-gradient">Hear</span> From You
               </h2>
 
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
+              <form className="space-y-5">
+                <div className="grid md:grid-cols-2 gap-5">
                   <div>
                     <input
                       type="text"
                       placeholder="Your Name"
-                      className="w-full border border-gray-200 p-4 text-sm focus:outline-none focus:border-[#b8860b] transition-colors bg-[#faf8f5]"
+                      className="input-field"
                     />
                   </div>
                   <div>
                     <input
                       type="email"
                       placeholder="Email Address"
-                      className="w-full border border-gray-200 p-4 text-sm focus:outline-none focus:border-[#b8860b] transition-colors bg-[#faf8f5]"
+                      className="input-field"
                     />
                   </div>
                 </div>
@@ -56,12 +56,12 @@ function Contact() {
                   <input
                     type="tel"
                     placeholder="Phone Number"
-                    className="w-full border border-gray-200 p-4 text-sm focus:outline-none focus:border-[#b8860b] transition-colors bg-[#faf8f5]"
+                    className="input-field"
                   />
                 </div>
 
                 <div>
-                  <select className="w-full border border-gray-200 p-4 text-sm focus:outline-none focus:border-[#b8860b] transition-colors bg-[#faf8f5] text-[#666]">
+                  <select className="input-field text-[#6b6b6b]">
                     <option value="">Select Subject</option>
                     <option value="booking">Room Booking Inquiry</option>
                     <option value="feedback">Feedback</option>
@@ -74,13 +74,13 @@ function Contact() {
                   <textarea
                     placeholder="Your Message"
                     rows="5"
-                    className="w-full border border-gray-200 p-4 text-sm focus:outline-none focus:border-[#b8860b] transition-colors bg-[#faf8f5] resize-none"
+                    className="input-field resize-none"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-[#1a1a1a] text-white py-4 font-medium tracking-wider uppercase text-sm hover:bg-[#b8860b] hover:text-[#1a1a1a] transition-all duration-300"
+                  className="w-full bg-[#0a0a0a] text-white py-4 font-semibold tracking-[0.12em] uppercase text-xs hover:bg-[#c9a962] hover:text-[#0a0a0a] transition-all duration-300"
                 >
                   Send Message
                 </button>
@@ -88,16 +88,16 @@ function Contact() {
             </div>
 
             {/* Contact Info */}
-            <div className="space-y-8">
+            <div className="space-y-6">
               {/* Main Info Cards */}
-              <div className="grid gap-6">
-                <div className="bg-white p-8 shadow-lg flex items-start gap-6 hover:shadow-xl transition-shadow duration-500">
-                  <div className="w-14 h-14 bg-[#b8860b]/10 flex items-center justify-center flex-shrink-0">
-                    <FaMapMarkerAlt className="text-[#b8860b] text-xl" />
+              <div className="grid gap-5">
+                <div className="bg-white p-8 shadow-sm flex items-start gap-6 hover:shadow-lg transition-shadow duration-500">
+                  <div className="w-14 h-14 bg-[#c9a962]/10 flex items-center justify-center flex-shrink-0">
+                    <FaMapMarkerAlt className="text-[#c9a962] text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-display font-semibold text-[#1a1a1a] text-lg mb-2">Address</h4>
-                    <p className="text-[#666]">
+                    <h4 className="font-display font-semibold text-[#0a0a0a] text-lg mb-2">Address</h4>
+                    <p className="text-[#6b6b6b] font-light">
                       Al Riaz Hotel<br />
                       Main Market Road, Larkana<br />
                       Sindh, Pakistan
@@ -105,51 +105,51 @@ function Contact() {
                   </div>
                 </div>
 
-                <div className="bg-white p-8 shadow-lg flex items-start gap-6 hover:shadow-xl transition-shadow duration-500">
-                  <div className="w-14 h-14 bg-[#b8860b]/10 flex items-center justify-center flex-shrink-0">
-                    <FaPhoneAlt className="text-[#b8860b] text-xl" />
+                <div className="bg-white p-8 shadow-sm flex items-start gap-6 hover:shadow-lg transition-shadow duration-500">
+                  <div className="w-14 h-14 bg-[#c9a962]/10 flex items-center justify-center flex-shrink-0">
+                    <FaPhoneAlt className="text-[#c9a962] text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-display font-semibold text-[#1a1a1a] text-lg mb-2">Phone</h4>
-                    <p className="text-[#666]">+92 300 1234567</p>
-                    <p className="text-[#666]">+92 74 1234567</p>
+                    <h4 className="font-display font-semibold text-[#0a0a0a] text-lg mb-2">Phone</h4>
+                    <p className="text-[#6b6b6b] font-light">+92 300 1234567</p>
+                    <p className="text-[#6b6b6b] font-light">+92 74 1234567</p>
                   </div>
                 </div>
 
-                <div className="bg-white p-8 shadow-lg flex items-start gap-6 hover:shadow-xl transition-shadow duration-500">
-                  <div className="w-14 h-14 bg-[#b8860b]/10 flex items-center justify-center flex-shrink-0">
-                    <FaEnvelope className="text-[#b8860b] text-xl" />
+                <div className="bg-white p-8 shadow-sm flex items-start gap-6 hover:shadow-lg transition-shadow duration-500">
+                  <div className="w-14 h-14 bg-[#c9a962]/10 flex items-center justify-center flex-shrink-0">
+                    <FaEnvelope className="text-[#c9a962] text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-display font-semibold text-[#1a1a1a] text-lg mb-2">Email</h4>
-                    <p className="text-[#666]">info@alriazhotel.com</p>
-                    <p className="text-[#666]">reservations@alriazhotel.com</p>
+                    <h4 className="font-display font-semibold text-[#0a0a0a] text-lg mb-2">Email</h4>
+                    <p className="text-[#6b6b6b] font-light">info@alriazhotel.com</p>
+                    <p className="text-[#6b6b6b] font-light">reservations@alriazhotel.com</p>
                   </div>
                 </div>
 
-                <div className="bg-white p-8 shadow-lg flex items-start gap-6 hover:shadow-xl transition-shadow duration-500">
-                  <div className="w-14 h-14 bg-[#b8860b]/10 flex items-center justify-center flex-shrink-0">
-                    <FaClock className="text-[#b8860b] text-xl" />
+                <div className="bg-white p-8 shadow-sm flex items-start gap-6 hover:shadow-lg transition-shadow duration-500">
+                  <div className="w-14 h-14 bg-[#c9a962]/10 flex items-center justify-center flex-shrink-0">
+                    <FaClock className="text-[#c9a962] text-xl" />
                   </div>
                   <div>
-                    <h4 className="font-display font-semibold text-[#1a1a1a] text-lg mb-2">Hours</h4>
-                    <p className="text-[#666]">Front Desk: 24/7</p>
-                    <p className="text-[#666]">Restaurant: 7:00 AM - 11:00 PM</p>
+                    <h4 className="font-display font-semibold text-[#0a0a0a] text-lg mb-2">Hours</h4>
+                    <p className="text-[#6b6b6b] font-light">Front Desk: 24/7</p>
+                    <p className="text-[#6b6b6b] font-light">Restaurant: 7:00 AM - 11:00 PM</p>
                   </div>
                 </div>
               </div>
 
               {/* Social Media */}
-              <div className="bg-[#1a1a1a] p-8">
+              <div className="bg-[#0a0a0a] p-10">
                 <h4 className="font-display font-semibold text-white text-lg mb-6">Follow Us</h4>
                 <div className="flex gap-4">
-                  <a href="#" className="w-12 h-12 flex items-center justify-center border border-white/20 text-white hover:border-[#b8860b] hover:text-[#b8860b] transition-all duration-300">
+                  <a href="#" className="w-12 h-12 flex items-center justify-center border border-white/10 text-white hover:border-[#c9a962] hover:text-[#c9a962] transition-all duration-300">
                     <FaFacebook />
                   </a>
-                  <a href="#" className="w-12 h-12 flex items-center justify-center border border-white/20 text-white hover:border-[#b8860b] hover:text-[#b8860b] transition-all duration-300">
+                  <a href="#" className="w-12 h-12 flex items-center justify-center border border-white/10 text-white hover:border-[#c9a962] hover:text-[#c9a962] transition-all duration-300">
                     <FaInstagram />
                   </a>
-                  <a href="#" className="w-12 h-12 flex items-center justify-center border border-white/20 text-white hover:border-[#b8860b] hover:text-[#b8860b] transition-all duration-300">
+                  <a href="#" className="w-12 h-12 flex items-center justify-center border border-white/10 text-white hover:border-[#c9a962] hover:text-[#c9a962] transition-all duration-300">
                     <FaTwitter />
                   </a>
                 </div>
@@ -160,7 +160,7 @@ function Contact() {
       </section>
 
       {/* Map */}
-      <section className="pb-24 px-6">
+      <section className="pb-32 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="w-full h-[500px] rounded-xl overflow-hidden shadow-2xl">
             <iframe

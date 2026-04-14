@@ -48,64 +48,64 @@ function About() {
             alt="Al Riaz Hotel"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
+          <div className="hero-overlay"></div>
         </div>
 
         <div className="relative text-center px-6">
-          <p className="text-[#b8860b] text-sm tracking-[0.3em] uppercase mb-4 fade-in">Our Story</p>
+          <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 fade-in font-medium">Our Story</p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold slide-up">
-            About <span className="text-[#b8860b]">Al Riaz</span>
+            About <span className="text-gradient">Al Riaz</span>
           </h1>
-          <p className="mt-6 text-lg max-w-xl mx-auto text-white/80">
+          <p className="mt-6 text-lg max-w-xl mx-auto text-white/80 font-light">
             A legacy of luxury hospitality in the heart of Larkana
           </p>
         </div>
       </section>
 
       {/* INTRO */}
-      <section className="py-24 px-6 bg-[#faf8f5]">
+      <section className="py-32 px-6 bg-[#f8f6f1]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
-              <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[#b8860b]/30"></div>
+              <div className="absolute -top-6 -left-6 w-full h-full border border-[#c9a962]/20"></div>
               <img
                 src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
                 alt="Hotel Room"
-                className="w-full h-[500px] object-cover shadow-2xl relative"
+                className="w-full h-[550px] object-cover shadow-2xl relative"
               />
             </div>
 
             <div>
-              <p className="text-[#b8860b] text-sm tracking-[0.3em] uppercase mb-4">Welcome to Al Riaz</p>
-              <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#1a1a1a] mb-6">
-                Where <span className="text-[#b8860b]">Luxury</span> Meets Legacy
+              <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Welcome to Al Riaz</p>
+              <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a] mb-6">
+                Where <span className="text-gradient">Luxury</span> Meets Legacy
               </h2>
 
-              <p className="text-[#666] leading-relaxed mb-6">
+              <p className="text-[#6b6b6b] leading-relaxed mb-6 font-light text-base">
                 Al Riaz Hotel Larkana has been a beacon of refined hospitality since our inception. 
                 We take pride in offering our guests an unparalleled experience that combines modern 
                 luxury with traditional warmth.
               </p>
 
-              <p className="text-[#666] leading-relaxed mb-8">
+              <p className="text-[#6b6b6b] leading-relaxed mb-10 font-light text-base">
                 Our commitment to excellence is evident in every aspect of our hotel, from the 
                 meticulously appointed rooms to our world-class amenities and exceptional service.
               </p>
 
-              <div className="grid grid-cols-2 gap-6 mb-8">
+              <div className="grid grid-cols-2 gap-5 mb-10">
                 {stats.map((stat, index) => (
-                  <div key={index} className="text-center p-4 bg-white shadow-md">
-                    <p className="text-3xl font-display font-bold text-[#b8860b]">{stat.number}</p>
-                    <p className="text-[#666] text-sm">{stat.label}</p>
+                  <div key={index} className="text-center p-6 bg-white border border-[#c9a962]/10 shadow-sm">
+                    <p className="text-4xl font-display font-semibold text-[#c9a962]">{stat.number}</p>
+                    <p className="text-[#6b6b6b] text-sm mt-1">{stat.label}</p>
                   </div>
                 ))}
               </div>
 
               <Link 
                 to="/contact"
-                className="inline-block px-8 py-3 bg-[#b8860b] text-[#1a1a1a] font-medium tracking-wider uppercase text-sm hover:bg-[#9a7b3f] transition-all duration-300"
+                className="gold-btn inline-block"
               >
-                Plan Your Visit
+                <span>Plan Your Visit</span>
               </Link>
             </div>
           </div>
@@ -113,12 +113,12 @@ function About() {
       </section>
 
       {/* FACILITIES */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-32 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-[#b8860b] text-sm tracking-[0.3em] uppercase mb-4">Amenities</p>
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#1a1a1a]">
-              World-Class <span className="text-[#b8860b]">Facilities</span>
+          <div className="text-center mb-20">
+            <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Amenities</p>
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a]">
+              World-Class <span className="text-gradient">Facilities</span>
             </h2>
           </div>
 
@@ -126,11 +126,11 @@ function About() {
             {facilities.map((facility, index) => (
               <div 
                 key={index}
-                className="group p-8 bg-[#faf8f5] border border-transparent hover:border-[#b8860b] transition-all duration-500 text-center"
+                className="group p-10 bg-[#f8f6f1] border border-transparent hover:border-[#c9a962]/30 transition-all duration-500 text-center"
               >
-                <facility.icon className="w-10 h-10 mx-auto mb-4 text-[#b8860b] group-hover:scale-110 transition-transform" />
-                <h3 className="font-display font-semibold text-[#1a1a1a] mb-2">{facility.name}</h3>
-                <p className="text-[#666] text-sm">Experience premium service</p>
+                <facility.icon className="w-9 h-9 mx-auto mb-5 text-[#c9a962] group-hover:scale-110 transition-transform duration-500" />
+                <h3 className="font-display font-semibold text-[#0a0a0a] mb-2">{facility.name}</h3>
+                <p className="text-[#6b6b6b] text-sm font-light">Experience premium service</p>
               </div>
             ))}
           </div>
@@ -138,34 +138,34 @@ function About() {
       </section>
 
       {/* TEAM */}
-      <section className="py-24 px-6 bg-[#faf8f5]">
+      <section className="py-32 px-6 bg-[#f8f6f1]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <p className="text-[#b8860b] text-sm tracking-[0.3em] uppercase mb-4">Our Team</p>
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#1a1a1a]">
-              Meet the <span className="text-[#b8860b]">People</span>
+          <div className="text-center mb-20">
+            <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Our Team</p>
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a]">
+              Meet the <span className="text-gradient">People</span>
             </h2>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-10">
             {teamImages.map((member, index) => (
               <div
                 key={index}
-                className="luxury-card p-6 text-center group"
+                className="luxury-card p-8 text-center group"
               >
-                <div className="relative mb-6 overflow-hidden">
+                <div className="relative mb-8 overflow-hidden">
                   <img
                     src={member.img}
                     alt={member.name}
-                    className="w-40 h-40 mx-auto rounded-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-44 h-44 mx-auto rounded-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 rounded-full border-2 border-[#b8860b]/0 group-hover:border-[#b8860b]/50 transition-all duration-500"></div>
+                  <div className="absolute inset-0 rounded-full border-2 border-[#c9a962]/0 group-hover:border-[#c9a962]/40 transition-all duration-500"></div>
                 </div>
 
-                <h3 className="text-xl font-display font-semibold text-[#1a1a1a]">
+                <h3 className="text-xl font-display font-semibold text-[#0a0a0a]">
                   {member.name}
                 </h3>
-                <p className="text-[#b8860b] text-sm tracking-wider uppercase mt-1">
+                <p className="text-[#c9a962] text-xs tracking-[0.15em] uppercase mt-2 font-medium">
                   {member.role}
                 </p>
               </div>
@@ -175,12 +175,12 @@ function About() {
       </section>
 
       {/* LOCATION */}
-      <section className="py-24 px-6 bg-white">
+      <section className="py-32 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#b8860b] text-sm tracking-[0.3em] uppercase mb-4">Location</p>
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#1a1a1a]">
-              Find <span className="text-[#b8860b]">Us</span>
+            <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Location</p>
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a]">
+              Find <span className="text-gradient">Us</span>
             </h2>
           </div>
 
@@ -196,28 +196,28 @@ function About() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 px-6 overflow-hidden">
+      <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2070&q=80" 
             alt="Luxury Hotel" 
             className="w-full h-full object-cover" 
           />
-          <div className="absolute inset-0 bg-[#1a1a1a]/85"></div>
+          <div className="absolute inset-0 bg-[#0a0a0a]/85"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-display font-semibold mb-6">
-            Experience <span className="text-[#b8860b]">Luxury</span> Today
+          <h2 className="text-4xl md:text-5xl font-display font-semibold mb-8">
+            Experience <span className="text-gradient">Luxury</span> Today
           </h2>
-          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/70 text-lg mb-12 max-w-2xl mx-auto leading-relaxed font-light">
             Book your stay with us and discover why Al Riaz Hotel is the preferred choice 
             for discerning travelers
           </p>
           <Link
             to="/rooms"
-            className="inline-block px-10 py-4 bg-[#b8860b] text-[#1a1a1a] font-medium tracking-wider uppercase text-sm hover:bg-[#9a7b3f] transition-all duration-300"
+            className="gold-btn inline-block"
           >
-            Book Now
+            <span>Book Now</span>
           </Link>
         </div>
       </section>

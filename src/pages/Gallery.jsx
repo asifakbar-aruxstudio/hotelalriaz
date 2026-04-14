@@ -32,30 +32,30 @@ function HotelGallery() {
           alt="Hotel Gallery"
           className="absolute inset-0 w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
+        <div className="hero-overlay"></div>
         <div className="relative text-center px-6">
-          <p className="text-[#b8860b] text-sm tracking-[0.3em] uppercase mb-4 fade-in">Discover</p>
+          <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 fade-in font-medium">Discover</p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold slide-up">
-            Our <span className="text-[#b8860b]">Gallery</span>
+            Our <span className="text-gradient">Gallery</span>
           </h1>
-          <p className="mt-6 text-lg max-w-xl mx-auto text-white/80">
+          <p className="mt-6 text-lg max-w-xl mx-auto text-white/80 font-light">
             Explore the elegance of Al Riaz Hotel
           </p>
         </div>
       </section>
 
       {/* CATEGORY FILTER */}
-      <section className="py-12 px-6 bg-white border-b border-gray-100">
+      <section className="py-10 px-6 bg-white border-b border-gray-100">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap justify-center gap-2">
             {categories.map((cat) => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-6 py-2 text-xs font-medium tracking-wider uppercase transition-all duration-300 ${
+                className={`px-6 py-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase transition-all duration-300 ${
                   activeCategory === cat
-                    ? "bg-[#b8860b] text-[#1a1a1a]"
-                    : "bg-[#faf8f5] text-[#666] hover:bg-[#b8860b] hover:text-[#1a1a1a]"
+                    ? "bg-[#c9a962] text-[#0a0a0a]"
+                    : "bg-[#f8f6f1] text-[#6b6b6b] hover:bg-[#c9a962] hover:text-[#0a0a0a]"
                 }`}
               >
                 {cat}
@@ -66,7 +66,7 @@ function HotelGallery() {
       </section>
 
       {/* GALLERY GRID */}
-      <section className="py-16 px-6 bg-[#faf8f5]">
+      <section className="py-20 px-6 bg-[#f8f6f1]">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredImages.map((item, index) => (
@@ -80,7 +80,7 @@ function HotelGallery() {
                   className="w-full h-80 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500 flex items-center justify-center">
-                  <span className="text-white text-sm tracking-wider uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 border border-white px-6 py-2">
+                  <span className="text-white text-xs tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 border border-white px-6 py-2">
                     {item.category}
                   </span>
                 </div>
@@ -91,27 +91,27 @@ function HotelGallery() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 px-6 overflow-hidden">
+      <section className="relative py-32 px-6 overflow-hidden">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2070&q=80" 
             alt="Luxury Hotel" 
             className="w-full h-full object-cover" 
           />
-          <div className="absolute inset-0 bg-[#1a1a1a]/85"></div>
+          <div className="absolute inset-0 bg-[#0a0a0a]/85"></div>
         </div>
         <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-4xl md:text-5xl font-display font-semibold mb-6">
-            Book Your <span className="text-[#b8860b]">Stay</span>
+          <h2 className="text-4xl md:text-5xl font-display font-semibold mb-8">
+            Book Your <span className="text-gradient">Stay</span>
           </h2>
-          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-white/70 text-lg mb-12 max-w-2xl mx-auto leading-relaxed font-light">
             Experience the luxury in person - reserve your room today
           </p>
           <Link
             to="/rooms"
-            className="inline-block px-10 py-4 bg-[#b8860b] text-[#1a1a1a] font-medium tracking-wider uppercase text-sm hover:bg-[#9a7b3f] transition-all duration-300"
+            className="gold-btn inline-block"
           >
-            View Rooms
+            <span>View Rooms</span>
           </Link>
         </div>
       </section>

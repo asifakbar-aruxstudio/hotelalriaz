@@ -31,65 +31,66 @@ function Navbar() {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-white/95 backdrop-blur-md shadow-lg py-3"
-          : "bg-transparent py-5"
+          ? "bg-white/92 backdrop-blur-xl shadow-[0_1px_0_rgba(0,0,0,0.05)] py-3"
+          : "bg-transparent py-6"
       }`}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-6 md:px-12">
+      <div className="max-w-[1400px] mx-auto flex justify-between items-center px-6 md:px-12">
         <Link to="/" className="flex items-center gap-2">
-          <div className={`text-2xl font-display font-bold tracking-wider transition-colors ${
-            scrolled ? "text-[#1a1a1a]" : "text-white"
+          <div className={`text-2xl font-display font-semibold tracking-[0.08em] transition-all duration-500 logo-hover ${
+            scrolled ? "text-[#0a0a0a]" : "text-white"
           }`}>
-            AL<span className="text-[#b8860b]">RIAZ</span>
+            AL<span className="text-[#c9a962]">RIAZ</span>
           </div>
-          <div className={`text-xs tracking-[0.3em] uppercase transition-colors ${
-            scrolled ? "text-[#666]" : "text-white/70"
+          <div className={`text-[10px] tracking-[0.4em] uppercase font-medium transition-colors duration-500 ${
+            scrolled ? "text-[#6b6b6b]" : "text-white/60"
           }`}>
             Hotel
           </div>
         </Link>
 
-        <ul className="hidden lg:flex items-center gap-1">
+        <ul className="hidden lg:flex items-center gap-0.5">
           {links.map((link, index) => (
             <li key={index}>
               <Link
                 to={link.to}
-                className={`px-4 py-2 text-sm font-medium tracking-wider uppercase transition-all duration-300 relative group ${
+                className={`relative px-4 py-2 text-[13px] font-medium tracking-[0.08em] uppercase transition-all duration-300 ${
                   scrolled
-                    ? "text-[#1a1a1a] hover:text-[#b8860b]"
-                    : "text-white/90 hover:text-white"
+                    ? "text-[#0a0a0a] hover:text-[#c9a962]"
+                    : "text-white/80 hover:text-white"
                 }`}
+                style={{ fontFamily: "'DM Sans', sans-serif" }}
               >
                 {link.name}
-                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#b8860b] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#c9a962] transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </li>
           ))}
         </ul>
 
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-3">
           {user ? (
             <>
               {user.role === 'admin' && (
                 <Link
                   to="/admin"
-                  className={`px-5 py-2.5 text-xs font-medium tracking-wider uppercase transition-all duration-300 ${
+                  className={`px-4 py-2 text-[11px] font-semibold tracking-[0.12em] uppercase transition-all duration-300 ${
                     scrolled
-                      ? "text-[#1a1a1a] hover:text-[#b8860b]"
-                      : "text-white hover:text-[#b8860b]"
+                      ? "text-[#0a0a0a] hover:text-[#c9a962]"
+                      : "text-white hover:text-[#c9a962]"
                   }`}
                 >
                   Dashboard
                 </Link>
               )}
-              <span className={`text-sm font-medium ${scrolled ? "text-[#1a1a1a]" : "text-white"}`}>
+              <span className={`text-[13px] font-medium ${scrolled ? "text-[#0a0a0a]" : "text-white"}`}>
                 {user.name}
               </span>
               <button
                 onClick={logout}
-                className="px-5 py-2.5 text-xs font-medium tracking-wider uppercase bg-[#b8860b] text-[#1a1a1a] hover:bg-[#9a7b3f] transition-all duration-300"
+                className="px-5 py-2.5 text-[11px] font-semibold tracking-[0.12em] uppercase bg-[#c9a962] text-[#0a0a0a] hover:bg-[#b89b54] transition-all duration-300"
               >
                 Logout
               </button>
@@ -98,17 +99,17 @@ function Navbar() {
             <>
               <Link
                 to="/login"
-                className={`px-5 py-2.5 text-xs font-medium tracking-wider uppercase transition-all duration-300 ${
+                className={`px-4 py-2 text-[11px] font-semibold tracking-[0.12em] uppercase transition-all duration-300 ${
                   scrolled
-                    ? "text-[#1a1a1a] hover:text-[#b8860b]"
-                    : "text-white hover:text-[#b8860b]"
+                    ? "text-[#0a0a0a] hover:text-[#c9a962]"
+                    : "text-white hover:text-[#c9a962]"
                 }`}
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="px-6 py-2.5 text-xs font-medium tracking-wider uppercase bg-[#b8860b] text-[#1a1a1a] hover:bg-[#9a7b3f] transition-all duration-300"
+                className="px-6 py-2.5 text-[11px] font-semibold tracking-[0.12em] uppercase bg-[#c9a962] text-[#0a0a0a] hover:bg-[#b89b54] transition-all duration-300"
               >
                 Book Now
               </Link>
@@ -117,22 +118,22 @@ function Navbar() {
         </div>
 
         <button 
-          className={`lg:hidden p-2 transition-colors ${scrolled ? "text-[#1a1a1a]" : "text-white"}`}
+          className={`lg:hidden p-2 transition-colors ${scrolled ? "text-[#0a0a0a]" : "text-white"}`}
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          {menuOpen ? <HiX size={28} /> : <HiMenu size={28} />}
+          {menuOpen ? <HiX size={26} /> : <HiMenu size={26} />}
         </button>
       </div>
 
       {menuOpen && (
         <div className="lg:hidden bg-white shadow-2xl">
-          <ul className="flex flex-col items-center py-8 space-y-4">
+          <ul className="flex flex-col items-center py-8 space-y-1">
             {links.map((link, index) => (
               <li key={index}>
                 <Link
                   to={link.to}
                   onClick={() => setMenuOpen(false)}
-                  className="px-6 py-3 text-sm font-medium tracking-wider uppercase text-[#1a1a1a] hover:text-[#b8860b] transition-colors"
+                  className="px-6 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase text-[#0a0a0a] hover:text-[#c9a962] transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -145,7 +146,7 @@ function Navbar() {
                     <Link
                       to="/admin"
                       onClick={() => setMenuOpen(false)}
-                      className="px-6 py-3 text-sm font-medium tracking-wider uppercase text-[#1a1a1a] hover:text-[#b8860b]"
+                      className="px-6 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase text-[#0a0a0a] hover:text-[#c9a962]"
                     >
                       Dashboard
                     </Link>
@@ -154,7 +155,7 @@ function Navbar() {
                 <li>
                   <button 
                     onClick={() => { logout(); setMenuOpen(false); }} 
-                    className="px-6 py-3 text-sm font-medium tracking-wider uppercase text-[#b8860b]"
+                    className="px-6 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase text-[#c9a962]"
                   >
                     Logout
                   </button>
@@ -166,7 +167,7 @@ function Navbar() {
                   <Link 
                     to="/login" 
                     onClick={() => setMenuOpen(false)} 
-                    className="px-6 py-3 text-sm font-medium tracking-wider uppercase text-[#1a1a1a] hover:text-[#b8860b]"
+                    className="px-6 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase text-[#0a0a0a] hover:text-[#c9a962]"
                   >
                     Login
                   </Link>
@@ -175,7 +176,7 @@ function Navbar() {
                   <Link 
                     to="/register" 
                     onClick={() => setMenuOpen(false)} 
-                    className="px-8 py-3 text-xs font-medium tracking-wider uppercase bg-[#b8860b] text-[#1a1a1a]"
+                    className="px-8 py-3 mt-2 text-[11px] font-semibold tracking-[0.12em] uppercase bg-[#c9a962] text-[#0a0a0a]"
                   >
                     Book Now
                   </Link>
