@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const terms = [
   {
@@ -55,33 +56,57 @@ function TermsConditions() {
   };
 
   return (
-    <div className="font-sans max-w-5xl mx-auto py-20 px-6">
-      <h1 className="text-4xl font-bold text-blue-700 text-center mb-12 py-4 ">
-        Terms & Conditions
-      </h1>
+    <div className="font-body">
+      {/* Hero */}
+      <section className="relative h-[400px] flex items-center justify-center text-white overflow-hidden">
+        <img
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2070&q=80"
+          alt="Terms"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
+        <div className="relative text-center px-6">
+          <h1 className="text-5xl md:text-6xl font-display font-semibold slide-up">
+            Terms & <span className="text-[#b8860b]">Conditions</span>
+          </h1>
+        </div>
+      </section>
 
-      <div className="space-y-4">
-        {terms.map((term, index) => (
-          <div
-            key={index}
-            className="border rounded-xl overflow-hidden shadow hover:shadow-lg transition"
-          >
-            <button
-              onClick={() => toggleIndex(index)}
-              className="w-full flex justify-between items-center p-4 bg-blue-100 text-blue-700 font-semibold text-left focus:outline-none"
+      {/* Content */}
+      <div className="max-w-4xl mx-auto py-20 px-6">
+        <div className="space-y-4">
+          {terms.map((term, index) => (
+            <div
+              key={index}
+              className="border border-gray-200 rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition duration-300"
             >
-              <span>{term.title}</span>
-              <span className="text-2xl">
-                {openIndex === index ? "-" : "+"}
-              </span>
-            </button>
-            {openIndex === index && (
-              <div className="p-4 bg-white text-gray-700 text-sm leading-relaxed">
-                {term.content}
-              </div>
-            )}
-          </div>
-        ))}
+              <button
+                onClick={() => toggleIndex(index)}
+                className="w-full flex justify-between items-center p-6 bg-white text-[#1a1a1a] font-display font-semibold text-left focus:outline-none hover:bg-[#faf8f5] transition"
+              >
+                <span className="text-lg">{term.title}</span>
+                <span className="text-2xl text-[#b8860b]">
+                  {openIndex === index ? "−" : "+"}
+                </span>
+              </button>
+              {openIndex === index && (
+                <div className="p-6 bg-[#faf8f5] text-[#666] leading-relaxed border-t border-gray-100">
+                  {term.content}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-12 text-center">
+          <p className="text-[#666] mb-6">Have questions about our policies?</p>
+          <Link 
+            to="/contact"
+            className="inline-block px-8 py-3 bg-[#b8860b] text-[#1a1a1a] font-medium tracking-wider uppercase text-sm hover:bg-[#9a7b3f] transition-all duration-300"
+          >
+            Contact Us
+          </Link>
+        </div>
       </div>
     </div>
   );

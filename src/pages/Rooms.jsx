@@ -1,176 +1,127 @@
-import React, { useState } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import BookingModal from "../components/BookingModal";
-import { useParams } from "react-router-dom";
-import RoomDetail from "./RoomDetails";
-const rooms = [
-  {
-    id: 1,
-    type: "Standard Room",
-    price: 80,
-    img: "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
-    desc: "Comfortable room perfect for short stays with modern amenities.",
-    amenities: ["Wi-Fi", "TV", "Air Conditioning", "Room Service"]
-  },
-  {
-    id: 2,
-    type: "Deluxe Room",
-    price: 120,
-    img: "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80",
-    desc: "Spacious deluxe room with king-size bed and city view.",
-    amenities: ["Wi-Fi", "TV", "Mini Bar", "Air Conditioning"]
-  },
-  {
-    id: 3,
-    type: "Family Room",
-    price: 180,
-    img: "https://images.unsplash.com/photo-1560448070-3e0b0ef9c9d1?auto=format&fit=crop&w=800&q=80",
-    desc: "Large family room ideal for families with multiple beds.",
-    amenities: ["Wi-Fi", "TV", "Breakfast", "Air Conditioning"]
-  },
-  {
-    id: 4,
-    type: "Suite Room",
-    price: 300,
-    img: "https://images.unsplash.com/photo-1618221124724-6e12d16b927e?auto=format&fit=crop&w=800&q=80",
-    desc: "Luxury suite with living area, premium facilities and beautiful view.",
-    amenities: ["Wi-Fi", "Jacuzzi", "Mini Kitchen", "Balcony"]
-  }
-];
+import { AuthContext } from "../context/AuthContext";
+
+const API_URL = 'http://localhost:5000/api';
 
 function Rooms() {
+  const { user } = useContext(AuthContext);
+  const [rooms, setRooms] = useState([]);
   const [openModal, setOpenModal] = useState(false);
   const [selectedRoom, setSelectedRoom] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchRooms();
+  }, []);
+
+  const fetchRooms = async () => {
+    try {
+      const res = await fetch(`${API_URL}/rooms`);
+      const data = await res.json();
+      setRooms(data);
+    } catch (error) {
+      console.error('Error fetching rooms:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const handleBook = (room) => {
+    if (!user) {
+      window.location.href = '/login';
+      return;
+    }
     setSelectedRoom(room);
     setOpenModal(true);
   };
 
   return (
-    <div className="font-sans">
-
-      {/* HERO SECTION */}
-
-      <section className="relative h-[420px] flex items-center justify-center text-white overflow-hidden">
-
+    <div className="font-body">
+      <section className="relative h-[500px] flex items-center justify-center text-white overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1600&q=80"
-          alt="Hotel Rooms"
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2070&q=80"
+          alt="Luxury Rooms"
           className="absolute inset-0 w-full h-full object-cover"
         />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-purple-800 to-blue-700 opacity-80"></div>
-
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
         <div className="relative text-center px-6">
-
-          <h1 className="text-5xl md:text-6xl font-extrabold drop-shadow-lg">
-            Our Luxury Rooms
+          <p className="text-[#b8860b] text-sm tracking-[0.3em] uppercase mb-4 fade-in">Accommodations</p>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold slide-up">
+            Luxury <span className="text-[#b8860b]">Rooms</span>
           </h1>
-
-          <p className="mt-4 text-lg max-w-xl mx-auto">
-            Discover comfort and luxury in every room designed for your perfect stay.
+          <p className="mt-6 text-lg max-w-xl mx-auto text-white/80">
+            Discover comfort and elegance in our meticulously designed rooms
           </p>
-
         </div>
-
       </section>
 
-
-      {/* ROOMS GRID */}
-
-      <section className="max-w-7xl mx-auto py-20 px-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
-
-        {rooms.map((room) => (
-
-          <div
-            key={room.id}
-            className="bg-white rounded-xl shadow-xl overflow-hidden hover:scale-105 transition duration-300"
-          >
-
-            {/* ROOM IMAGE */}
-
-            <img
-              src={room.img}
-              alt={room.type}
-              className="w-full h-56 object-cover"
-            />
-
-            <div className="p-6">
-
-              {/* ROOM TYPE */}
-
-              <h3 className="text-xl font-bold text-blue-700 mb-2">
-                {room.type}
-              </h3>
-
-              {/* DESCRIPTION */}
-
-              <p className="text-gray-600 text-sm mb-3">
-                {room.desc}
-              </p>
-
-              {/* PRICE */}
-
-              <p className="text-purple-700 font-bold mb-4">
-                ${room.price} / night
-              </p>
-
-              {/* FACILITIES */}
-
-              <div className="flex flex-wrap gap-2 mb-5">
-
-                {room.amenities.map((item, index) => (
-
-                  <span
-                    key={index}
-                    className="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full"
-                  >
-                    {item}
-                  </span>
-
-                ))}
-
+      {loading ? (
+        <div className="text-center py-32">
+          <div className="w-12 h-12 border-2 border-[#b8860b] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-[#666]">Loading accommodations...</p>
+        </div>
+      ) : rooms.length === 0 ? (
+        <div className="text-center py-32">
+          <p className="text-[#666] text-xl">No rooms available at the moment.</p>
+        </div>
+      ) : (
+        <section className="max-w-7xl mx-auto py-24 px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {rooms.map((room) => (
+              <div
+                key={room._id}
+                className="luxury-card group"
+              >
+                <div className="relative overflow-hidden">
+                  <img
+                    src={room.images?.[0] || "https://images.unsplash.com/photo-1631049307264-da0ec9d70304?auto=format&fit=crop&w=800&q=80"}
+                    alt={room.title}
+                    className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute top-4 right-4 bg-[#b8860b] text-[#1a1a1a] px-4 py-1 text-xs font-medium tracking-wider uppercase">
+                    Available
+                  </div>
+                </div>
+                <div className="p-8">
+                  <h3 className="text-xl font-display font-semibold text-[#1a1a1a] mb-3">
+                    {room.title}
+                  </h3>
+                  <p className="text-[#666] text-sm mb-4 leading-relaxed">
+                    {room.description?.substring(0, 100)}...
+                  </p>
+                  <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                    <p className="text-[#b8860b] font-display font-bold text-2xl">
+                      ${room.price}<span className="text-[#666] text-sm font-normal"> / night</span>
+                    </p>
+                    <div className="flex gap-3">
+                      <Link
+                        to={`/room/${room._id}`}
+                        className="px-5 py-2 border border-[#b8860b] text-[#b8860b] text-xs font-medium tracking-wider uppercase hover:bg-[#b8860b] hover:text-[#1a1a1a] transition-all duration-300"
+                      >
+                        Details
+                      </Link>
+                      <button
+                        onClick={() => handleBook(room)}
+                        className="px-5 py-2 bg-[#1a1a1a] text-white text-xs font-medium tracking-wider uppercase hover:bg-[#b8860b] hover:text-[#1a1a1a] transition-all duration-300"
+                      >
+                        Book
+                      </button>
+                    </div>
+                  </div>
+                </div>
               </div>
-
-              {/* BUTTONS */}
-
-              <div className="flex gap-3">
-
-                <Link
-                  to={`/room/${room.id}`}
-                  className="flex-1 text-center border border-purple-600 text-purple-700 px-4 py-2 rounded-lg hover:bg-purple-600 hover:text-white transition"
-                >
-                  View
-                </Link>
-
-                <button
-                  onClick={() => handleBook(room)}
-                  className="flex-1 bg-gradient-to-r from-blue-700 via-purple-800 to-blue-700 text-white px-4 py-2 rounded-lg font-semibold hover:scale-105 transition"
-                >
-                  Book
-                </button>
-
-              </div>
-
-            </div>
-
+            ))}
           </div>
-
-        ))}
-   
-        <RoomDetail />
-      </section>
-     
-
-      {/* BOOKING MODAL */}
+        </section>
+      )}
 
       <BookingModal
         isOpen={openModal}
         onClose={() => setOpenModal(false)}
         room={selectedRoom}
       />
-
     </div>
   );
 }

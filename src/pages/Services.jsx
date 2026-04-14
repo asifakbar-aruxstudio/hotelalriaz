@@ -1,133 +1,131 @@
 import React from "react";
-import { FaWifi, FaParking, FaSwimmingPool, FaDumbbell } from "react-icons/fa";
-import { MdRoomService, MdLocalLaundryService } from "react-icons/md";
-import { IoRestaurant } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { FaWifi, FaParking, FaSwimmingPool, FaDumbbell, FaSpa, FaConciergeBell } from "react-icons/fa";
+import { MdRoomService, MdLocalLaundryService, MdRestaurant, MdEventAvailable } from "react-icons/md";
 
 const services = [
   {
-    title: "Free WiFi",
-    icon: <FaWifi size={40} />,
-    desc: "High-speed internet available in all rooms and public areas."
+    title: "High-Speed WiFi",
+    icon: <FaWifi size={32} />,
+    desc: "Complimentary high-speed internet available throughout the hotel."
   },
   {
-    title: "Room Service",
-    icon: <MdRoomService size={40} />,
-    desc: "24/7 room service for food, drinks, and special requests."
+    title: "24/7 Room Service",
+    icon: <MdRoomService size={32} />,
+    desc: "Round-the-clock dining and personalized service in your room."
   },
   {
-    title: "Parking",
-    icon: <FaParking size={40} />,
-    desc: "Secure parking space available for all hotel guests."
+    title: "Valet Parking",
+    icon: <FaParking size={32} />,
+    desc: "Secure parking with professional valet service for guests."
   },
   {
-    title: "Restaurant",
-    icon: <IoRestaurant size={40} />,
-    desc: "Enjoy delicious meals prepared by our professional chefs."
+    title: "Fine Dining",
+    icon: <MdRestaurant size={32} />,
+    desc: "Exquisite culinary experiences prepared by master chefs."
   },
   {
-    title: "Swimming Pool",
-    icon: <FaSwimmingPool size={40} />,
-    desc: "Relax and enjoy our clean and luxurious swimming pool."
+    title: "Infinity Pool",
+    icon: <FaSwimmingPool size={32} />,
+    desc: "Temperature-controlled pool with panoramic city views."
   },
   {
-    title: "Gym",
-    icon: <FaDumbbell size={40} />,
-    desc: "Fully equipped gym for your daily fitness routine."
+    title: "Fitness Center",
+    icon: <FaDumbbell size={32} />,
+    desc: "State-of-the-art gym with personalized training sessions."
   },
   {
-    title: "Laundry",
-    icon: <MdLocalLaundryService size={40} />,
-    desc: "Fast and professional laundry service for guests."
+    title: "Luxury Spa",
+    icon: <FaSpa size={32} />,
+    desc: "Rejuvenating treatments and therapies for complete wellness."
+  },
+  {
+    title: "Concierge",
+    icon: <FaConciergeBell size={32} />,
+    desc: "Dedicated assistance for all your travel needs."
   }
 ];
 
 function Services() {
   return (
-    <div className="font-sans">
-
+    <div className="font-body">
       {/* HERO SECTION */}
-
-      <section className="relative h-[380px] flex items-center justify-center text-white">
-
+      <section className="relative h-[500px] flex items-center justify-center text-white overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1600&q=80"
+          src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2070&q=80"
           alt="Hotel Services"
           className="absolute inset-0 w-full h-full object-cover"
         />
-
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-700 via-purple-800 to-blue-700 opacity-80"></div>
-
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
         <div className="relative text-center px-6">
-
-          <h1 className="text-5xl font-extrabold">
-            Our Services
+          <p className="text-[#b8860b] text-sm tracking-[0.3em] uppercase mb-4 fade-in">Experience</p>
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold slide-up">
+            Our <span className="text-[#b8860b]">Services</span>
           </h1>
-
-          <p className="mt-4 text-lg">
-            Enjoy luxury services during your stay
+          <p className="mt-6 text-lg max-w-xl mx-auto text-white/80">
+            World-class amenities for an unforgettable stay
           </p>
-
         </div>
-
       </section>
-
 
       {/* SERVICES GRID */}
+      <section className="py-24 px-6 bg-[#faf8f5]">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <p className="text-[#b8860b] text-sm tracking-[0.3em] uppercase mb-4">What We Offer</p>
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#1a1a1a]">
+              Exceptional <span className="text-[#b8860b]">Services</span>
+            </h2>
+          </div>
 
-      <section className="max-w-7xl mx-auto py-20 px-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="luxury-card p-8 text-center group hover:bg-[#1a1a1a] hover:text-white transition-all duration-500"
+              >
+                <div className="text-[#b8860b] flex justify-center mb-6 group-hover:text-[#b8860b] transition-colors">
+                  {service.icon}
+                </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                <h3 className="text-xl font-display font-semibold text-[#1a1a1a] group-hover:text-white mb-3 transition-colors">
+                  {service.title}
+                </h3>
 
-          {services.map((service, index) => (
-
-            <div
-              key={index}
-              className="bg-white shadow-lg rounded-xl p-6 text-center hover:scale-105 transition duration-300"
-            >
-
-              <div className="text-blue-700 flex justify-center mb-4">
-                {service.icon}
+                <p className="text-[#666] text-sm group-hover:text-white/70 transition-colors">
+                  {service.desc}
+                </p>
               </div>
-
-              <h3 className="text-xl font-semibold mb-2">
-                {service.title}
-              </h3>
-
-              <p className="text-gray-600 text-sm">
-                {service.desc}
-              </p>
-
-            </div>
-
-          ))}
-
+            ))}
+          </div>
         </div>
-
       </section>
 
-
-      {/* CALL TO ACTION */}
-
-      <section className="bg-gradient-to-r from-blue-700 via-purple-800 to-blue-700 text-white py-20 text-center">
-
-        <h2 className="text-3xl font-bold mb-4">
-          Ready to Experience Luxury?
-        </h2>
-
-        <p className="mb-6">
-          Book your stay at Al Riaz Hotel today
-        </p>
-
-        <Link
-          to="/booking"
-          className="bg-white text-blue-700 px-8 py-3 rounded-lg font-semibold hover:scale-105 transition"
-        >
-          Book Now
-        </Link>
-
+      {/* CTA */}
+      <section className="relative py-24 px-6 overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2070&q=80" 
+            alt="Luxury Hotel" 
+            className="w-full h-full object-cover" 
+          />
+          <div className="absolute inset-0 bg-[#1a1a1a]/85"></div>
+        </div>
+        <div className="relative z-10 max-w-4xl mx-auto text-center text-white">
+          <h2 className="text-4xl md:text-5xl font-display font-semibold mb-6">
+            Experience <span className="text-[#b8860b]">True</span> Luxury
+          </h2>
+          <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto leading-relaxed">
+            Let us pamper you with our world-class services during your stay at Al Riaz Hotel
+          </p>
+          <Link
+            to="/rooms"
+            className="inline-block px-10 py-4 bg-[#b8860b] text-[#1a1a1a] font-medium tracking-wider uppercase text-sm hover:bg-[#9a7b3f] transition-all duration-300"
+          >
+            Book Your Stay
+          </Link>
+        </div>
       </section>
-
     </div>
   );
 }

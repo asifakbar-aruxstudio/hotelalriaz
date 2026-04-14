@@ -2,6 +2,8 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
+import { Chatbot, WhatsAppButton } from "./components/Chatbot.jsx";
 
 import Home from "./pages/Home.jsx";
 import Rooms from "./pages/Rooms.jsx";
@@ -13,27 +15,33 @@ import NotFound from "./pages/NotFound.jsx";
 import Services from "./pages/Services.jsx";
 import TermsConditions from "./pages/TermsCondations.jsx";
 import Footer from "./components/Footer.jsx";
+import Login from "./pages/Login.jsx";
+import Register from "./pages/Register.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
 
 function App() {
   return (
-    <div>
-
-      {/* Navbar */}
-      <Navbar />
-
-      {/* Routes */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/rooms" element={<Rooms />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/TermsConditions" element={<TermsConditions />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </div>
+    <AuthProvider>
+      <div>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/rooms" element={<Rooms />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/TermsConditions" element={<TermsConditions />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/admin" element={<Dashboard />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+        <Footer />
+        <Chatbot />
+        <WhatsAppButton />
+      </div>
+    </AuthProvider>
   );
 }
 
