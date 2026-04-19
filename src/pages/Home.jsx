@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaSwimmer, FaWifi, FaUtensils, FaDumbbell, FaSpa, FaParking, FaStar, FaQuoteLeft, FaArrowRight, FaChevronLeft, FaChevronRight, FaWhatsapp } from "react-icons/fa";
 
-const WHATSAPP_NUMBER = "+923001234567";
+const WHATSAPP_NUMBER = "+923153933660";
 
 const heroImage = "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2070&q=80";
 
