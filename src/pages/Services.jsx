@@ -58,7 +58,7 @@ function Services() {
         />
         <div className="hero-overlay"></div>
         <div className="relative text-center px-6">
-          <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 fade-in font-medium">Experience</p>
+          <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 fade-in font-medium">Experience</p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold slide-up">
             Our <span className="text-gradient">Services</span>
           </h1>
@@ -72,7 +72,7 @@ function Services() {
       <section className="py-32 px-6 bg-[#f8f6f1]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">What We Offer</p>
+            <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">What We Offer</p>
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a]">
               Exceptional <span className="text-gradient">Services</span>
             </h2>
@@ -84,7 +84,7 @@ function Services() {
                 key={index}
                 className="luxury-card p-10 text-center group hover:bg-[#0a0a0a] hover:text-white transition-all duration-500"
               >
-                <div className="text-[#c9a962] flex justify-center mb-6 group-hover:text-[#c9a962] transition-colors">
+                <div className="text-[#0d9488] flex justify-center mb-6 group-hover:text-[#0d9488] transition-colors">
                   {service.icon}
                 </div>
 

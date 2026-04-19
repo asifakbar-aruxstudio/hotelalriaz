@@ -4,23 +4,46 @@ const WHATSAPP_NUMBER = "+923001234567";
 
 const responses = {
   greeting: "Hello! Welcome to Al Riaz Hotel. How can I help you today?",
-  rooms: "We have luxury rooms starting from $120/night. Would you like to view our rooms?",
+  rooms: "We have luxury rooms starting from PKR 5000/night. Would you like to view our rooms?",
   booking: "I'd be happy to help you book a room! Please share your check-in date and number of guests.",
-  price: "Our room rates start from $120 for Deluxe Suite. Would you like to see all available rooms?",
-  location: "Al Riaz Hotel is located in Main Market Road, Larkana, Sindh, Pakistan.",
+  price: "Rooms start from PKR 5000 per night",
+  cost: "Rooms start from PKR 5000 per night",
+  rate: "Rooms start from PKR 5000 per night",
+  rates: "Rooms start from PKR 5000 per night",
+  checkin: "Check-in time is 2 PM",
+  "check-in": "Check-in time is 2 PM",
+  location: "We are located in the city center",
+  address: "We are located in the city center",
+  where: "We are located in the city center",
   contact: "You can reach us at +92 300 1234567 or email info@alriazhotel.com",
-  services: "We offer: Free WiFi, 24/7 Room Service, Fine Dining, Infinity Pool, Fitness Center, Luxury Spa, Valet Parking",
-  default: "Thank you for your message. Our team will get back to you shortly. For urgent inquiries, call +92 300 1234567"
+  phone: "You can reach us at +92 300 1234567",
+  call: "You can reach us at +92 300 1234567",
+  email: "You can email us at info@alriazhotel.com",
+  services: "We offer: Free WiFi, Parking, Restaurant, Room Service, Air Conditioning",
+  service: "We offer: Free WiFi, Parking, Restaurant, Room Service, Air Conditioning",
+  amenities: "We offer: Free WiFi, Parking, Restaurant, Room Service, Air Conditioning",
+  wifi: "Yes, we offer free high-speed WiFi for all guests!",
+  parking: "Yes, we provide free parking for all guests.",
+  restaurant: "Our restaurant serves delicious local and international cuisine.",
+  "room service": "We offer 24/7 room service for all our guests.",
+  ac: "Yes, all our rooms are air-conditioned.",
+  default: "Sorry, I didn't understand your question. For immediate assistance, please WhatsApp us at +92 300 1234567"
 };
 
 const keywords = {
-  hi: "greeting", hello: "greeting", hey: "greeting",
+  hi: "greeting", hello: "greeting", hey: "greeting", hey: "greeting",
   room: "rooms", rooms: "rooms", suite: "rooms", suites: "rooms",
   book: "booking", booking: "booking", reserve: "booking",
-  price: "price", cost: "price", rate: "price", rates: "price",
-  location: "location", address: "location", where: "location",
-  contact: "contact", phone: "contact", call: "contact", email: "contact",
-  service: "services", services: "services", amenity: "services", amenities: "services"
+  price: "price", cost: "cost", rate: "rate", rates: "rates",
+  checkin: "checkin", "check-in": "check-in", checkin: "checkin",
+  location: "location", address: "address", where: "location",
+  contact: "contact", phone: "contact", call: "contact", email: "email",
+  service: "services", services: "services", amenity: "services", amenities: "services",
+  wifi: "wifi", internet: "wifi",
+  parking: "parking", valet: "parking",
+  restaurant: "restaurant", dining: "restaurant", food: "restaurant",
+  "room service": "room service",
+  ac: "ac", "air conditioning": "ac", cooling: "ac"
 };
 
 function Chatbot() {

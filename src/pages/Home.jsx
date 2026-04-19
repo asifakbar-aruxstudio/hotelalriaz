@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import BookingModal from "../components/BookingModal";
-import { FaSwimmer, FaWifi, FaUtensils, FaDumbbell, FaSpa, FaParking, FaStar, FaQuoteLeft, FaArrowRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaSwimmer, FaWifi, FaUtensils, FaDumbbell, FaSpa, FaParking, FaStar, FaQuoteLeft, FaArrowRight, FaChevronLeft, FaChevronRight, FaWhatsapp } from "react-icons/fa";
+
+const WHATSAPP_NUMBER = "+923001234567";
 
 const heroImage = "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2070&q=80";
 
@@ -69,7 +70,12 @@ const testimonials = [
 ];
 
 function Home() {
-  const [openModal, setOpenModal] = useState(false);
+  const handleWhatsAppBook = (roomTitle = null) => {
+    const message = roomTitle 
+      ? `Hello Al Riaz Hotel, I would like to book the ${roomTitle} for my stay. Please confirm availability.`
+      : `Hello Al Riaz Hotel, I would like to book a room at your hotel. Please share available options and rates.`;
+    window.open(`https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`, '_blank');
+  };
 
   return (
     <div className="font-body">
@@ -97,10 +103,10 @@ function Home() {
                 <span>View Rooms</span>
               </Link>
               <button 
-                onClick={() => setOpenModal(true)}
-                className="dark-btn"
+                onClick={() => handleWhatsAppBook()}
+                className="dark-btn flex items-center gap-2"
               >
-                Book Your Stay
+                <FaWhatsapp className="w-4 h-4" /> Book Your Stay
               </button>
             </div>
           </div>
@@ -138,12 +144,12 @@ function Home() {
             </div>
             <div className="md:col-span-2 bg-[#0a0a0a] p-8 md:p-12 flex flex-col justify-center items-center">
               <p className="text-white/50 text-sm tracking-wider uppercase mb-2 font-medium">Starting from</p>
-              <p className="text-5xl font-display font-semibold text-[#c9a962] mb-5">$120</p>
+              <p className="text-5xl font-display font-semibold text-[#0d9488] mb-5">$120</p>
               <button 
-                onClick={() => setOpenModal(true)}
-                className="gold-btn w-full"
+                onClick={() => handleWhatsAppBook()}
+                className="gold-btn w-full flex items-center justify-center gap-2"
               >
-                <span>Check Availability</span>
+                <FaWhatsapp className="w-4 h-4" /> <span>Check Availability</span>
               </button>
             </div>
           </div>
@@ -155,19 +161,19 @@ function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
-              <div className="absolute -top-6 -left-6 w-full h-full border border-[#c9a962]/20"></div>
+              <div className="absolute -top-6 -left-6 w-full h-full border border-[#0d9488]/20"></div>
               <img
                 src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
                 alt="Luxury Hotel Room"
                 className="w-full h-[550px] object-cover shadow-2xl relative"
               />
-              <div className="absolute -bottom-10 -right-10 bg-[#c9a962] p-10 max-w-xs hidden lg:block">
+              <div className="absolute -bottom-10 -right-10 bg-[#0d9488] p-10 max-w-xs hidden lg:block">
                 <p className="text-[#0a0a0a] font-display text-5xl font-semibold mb-2">15+</p>
                 <p className="text-[#0a0a0a]/70 text-xs uppercase tracking-wider font-medium">Years of Excellence</p>
               </div>
             </div>
             <div>
-              <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">About Our Hotel</p>
+              <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">About Our Hotel</p>
               <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a] mb-6">
                 A Legacy of <span className="text-gradient">Luxury</span>
               </h2>
@@ -179,21 +185,21 @@ function Home() {
               </p>
               <div className="flex gap-12 mb-10">
                 <div>
-                  <p className="text-4xl font-display font-semibold text-[#c9a962]">150+</p>
+                  <p className="text-4xl font-display font-semibold text-[#0d9488]">150+</p>
                   <p className="text-[#6b6b6b] text-sm mt-1">Luxury Rooms</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-display font-semibold text-[#c9a962]">98%</p>
+                  <p className="text-4xl font-display font-semibold text-[#0d9488]">98%</p>
                   <p className="text-[#6b6b6b] text-sm mt-1">Guest Satisfaction</p>
                 </div>
                 <div>
-                  <p className="text-4xl font-display font-semibold text-[#c9a962]">24/7</p>
+                  <p className="text-4xl font-display font-semibold text-[#0d9488]">24/7</p>
                   <p className="text-[#6b6b6b] text-sm mt-1">Concierge</p>
                 </div>
               </div>
               <Link 
                 to="/about"
-                className="inline-flex items-center text-[#0a0a0a] font-semibold tracking-[0.08em] uppercase text-sm hover:text-[#c9a962] transition-colors group"
+                className="inline-flex items-center text-[#0a0a0a] font-semibold tracking-[0.08em] uppercase text-sm hover:text-[#0d9488] transition-colors group"
               >
                 Discover More
                 <FaArrowRight className="w-4 h-4 ml-3 transform group-hover:translate-x-2 transition-transform" />
@@ -207,7 +213,7 @@ function Home() {
       <section className="py-32 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Accommodations</p>
+            <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Accommodations</p>
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a]">
               Refined <span className="text-gradient">Rooms</span> & Suites
             </h2>
@@ -227,14 +233,14 @@ function Home() {
                   <h3 className="text-xl font-display font-semibold text-[#0a0a0a] mb-3">{room.title}</h3>
                   <p className="text-[#6b6b6b] text-sm mb-6 leading-relaxed font-light">{room.desc}</p>
                   <div className="flex items-center justify-between">
-                    <p className="text-[#c9a962] font-display font-semibold text-2xl">
+                    <p className="text-[#0d9488] font-display font-semibold text-2xl">
                       {room.price}<span className="text-[#6b6b6b] text-sm font-normal ml-1">/ night</span>
                     </p>
                     <button 
-                      onClick={() => setOpenModal(true)}
-                      className="text-[#c9a962] text-xs font-semibold tracking-[0.08em] uppercase hover:text-[#a68b3f] transition-colors"
+                      onClick={() => handleWhatsAppBook(room.title)}
+                      className="text-[#25D366] text-xs font-semibold tracking-[0.08em] uppercase hover:text-[#1da851] transition-colors flex items-center gap-1"
                     >
-                      Book Now
+                      <FaWhatsapp className="w-3 h-3" /> Book via WhatsApp
                     </button>
                   </div>
                 </div>
@@ -244,7 +250,7 @@ function Home() {
           <div className="text-center mt-14">
             <Link 
               to="/rooms"
-              className="inline-flex items-center px-10 py-4 border-2 border-[#c9a962] text-[#c9a962] font-semibold tracking-[0.08em] uppercase text-sm hover:bg-[#c9a962] hover:text-[#0a0a0a] transition-all duration-300 group"
+              className="inline-flex items-center px-10 py-4 border-2 border-[#0d9488] text-[#0d9488] font-semibold tracking-[0.08em] uppercase text-sm hover:bg-[#0d9488] hover:text-[#0a0a0a] transition-all duration-300 group"
             >
               View All Rooms
               <FaArrowRight className="w-4 h-4 ml-3 transform group-hover:translate-x-1 transition-transform" />
@@ -257,7 +263,7 @@ function Home() {
       <section className="py-32 px-6 bg-[#0a0a0a] text-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Amenities</p>
+            <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Amenities</p>
             <h2 className="text-4xl md:text-5xl font-display font-semibold">
               World-Class <span className="text-gradient">Facilities</span>
             </h2>
@@ -266,9 +272,9 @@ function Home() {
             {facilities.map((facility, index) => (
               <div 
                 key={index} 
-                className="group p-10 border border-white/5 hover:border-[#c9a962]/50 bg-[#0a0a0a]/80 hover:bg-[#0f0f0f] transition-all duration-500 text-center"
+                className="group p-10 border border-white/5 hover:border-[#0d9488]/50 bg-[#0a0a0a]/80 hover:bg-[#0f0f0f] transition-all duration-500 text-center"
               >
-                <facility.icon className="w-7 h-7 mx-auto mb-5 text-[#c9a962] transform group-hover:scale-110 transition-transform duration-500" />
+                <facility.icon className="w-7 h-7 mx-auto mb-5 text-[#0d9488] transform group-hover:scale-110 transition-transform duration-500" />
                 <p className="text-xs tracking-[0.1em] uppercase font-medium text-white/70 group-hover:text-white transition-colors">{facility.name}</p>
               </div>
             ))}
@@ -280,7 +286,7 @@ function Home() {
       <section className="py-32 px-6 bg-[#f8f6f1]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Gallery</p>
+            <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Gallery</p>
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a]">
               Our <span className="text-gradient">Spaces</span>
             </h2>
@@ -311,7 +317,7 @@ function Home() {
       <section className="py-32 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Testimonials</p>
+            <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Testimonials</p>
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a]">
               What Our <span className="text-gradient">Guests</span> Say
             </h2>
@@ -322,12 +328,12 @@ function Home() {
                 key={index} 
                 className="bg-[#f8f6f1] p-10 relative"
               >
-                <FaQuoteLeft className="text-[#c9a962]/15 text-5xl absolute top-8 left-8" />
+                <FaQuoteLeft className="text-[#0d9488]/15 text-5xl absolute top-8 left-8" />
                 <div className="flex gap-1 mb-6 mt-6">
                   {[...Array(5)].map((_, i) => (
                     <FaStar 
                       key={i} 
-                      className={`w-3.5 h-3.5 ${i < t.rating ? 'text-[#c9a962]' : 'text-gray-200'}`} 
+                      className={`w-3.5 h-3.5 ${i < t.rating ? 'text-[#0d9488]' : 'text-gray-200'}`} 
                     />
                   ))}
                 </div>
@@ -382,8 +388,6 @@ function Home() {
           </div>
         </div>
       </section>
-
-      <BookingModal isOpen={openModal} onClose={() => setOpenModal(false)} />
     </div>
   );
 }

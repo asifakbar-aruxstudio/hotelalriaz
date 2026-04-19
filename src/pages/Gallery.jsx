@@ -34,7 +34,7 @@ function HotelGallery() {
         />
         <div className="hero-overlay"></div>
         <div className="relative text-center px-6">
-          <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 fade-in font-medium">Discover</p>
+          <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 fade-in font-medium">Discover</p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold slide-up">
             Our <span className="text-gradient">Gallery</span>
           </h1>
@@ -54,8 +54,8 @@ function HotelGallery() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-6 py-2.5 text-[11px] font-semibold tracking-[0.1em] uppercase transition-all duration-300 ${
                   activeCategory === cat
-                    ? "bg-[#c9a962] text-[#0a0a0a]"
-                    : "bg-[#f8f6f1] text-[#6b6b6b] hover:bg-[#c9a962] hover:text-[#0a0a0a]"
+                    ? "bg-[#0d9488] text-[#0a0a0a]"
+                    : "bg-[#f8f6f1] text-[#6b6b6b] hover:bg-[#0d9488] hover:text-[#0a0a0a]"
                 }`}
               >
                 {cat}

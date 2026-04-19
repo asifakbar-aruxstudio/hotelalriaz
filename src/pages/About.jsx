@@ -52,7 +52,7 @@ function About() {
         </div>
 
         <div className="relative text-center px-6">
-          <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 fade-in font-medium">Our Story</p>
+          <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 fade-in font-medium">Our Story</p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold slide-up">
             About <span className="text-gradient">Al Riaz</span>
           </h1>
@@ -67,7 +67,7 @@ function About() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
-              <div className="absolute -top-6 -left-6 w-full h-full border border-[#c9a962]/20"></div>
+              <div className="absolute -top-6 -left-6 w-full h-full border border-[#0d9488]/20"></div>
               <img
                 src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
                 alt="Hotel Room"
@@ -76,7 +76,7 @@ function About() {
             </div>
 
             <div>
-              <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Welcome to Al Riaz</p>
+              <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Welcome to Al Riaz</p>
               <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a] mb-6">
                 Where <span className="text-gradient">Luxury</span> Meets Legacy
               </h2>
@@ -94,8 +94,8 @@ function About() {
 
               <div className="grid grid-cols-2 gap-5 mb-10">
                 {stats.map((stat, index) => (
-                  <div key={index} className="text-center p-6 bg-white border border-[#c9a962]/10 shadow-sm">
-                    <p className="text-4xl font-display font-semibold text-[#c9a962]">{stat.number}</p>
+                  <div key={index} className="text-center p-6 bg-white border border-[#0d9488]/10 shadow-sm">
+                    <p className="text-4xl font-display font-semibold text-[#0d9488]">{stat.number}</p>
                     <p className="text-[#6b6b6b] text-sm mt-1">{stat.label}</p>
                   </div>
                 ))}
@@ -116,7 +116,7 @@ function About() {
       <section className="py-32 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Amenities</p>
+            <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Amenities</p>
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a]">
               World-Class <span className="text-gradient">Facilities</span>
             </h2>
@@ -126,9 +126,9 @@ function About() {
             {facilities.map((facility, index) => (
               <div 
                 key={index}
-                className="group p-10 bg-[#f8f6f1] border border-transparent hover:border-[#c9a962]/30 transition-all duration-500 text-center"
+                className="group p-10 bg-[#f8f6f1] border border-transparent hover:border-[#0d9488]/30 transition-all duration-500 text-center"
               >
-                <facility.icon className="w-9 h-9 mx-auto mb-5 text-[#c9a962] group-hover:scale-110 transition-transform duration-500" />
+                <facility.icon className="w-9 h-9 mx-auto mb-5 text-[#0d9488] group-hover:scale-110 transition-transform duration-500" />
                 <h3 className="font-display font-semibold text-[#0a0a0a] mb-2">{facility.name}</h3>
                 <p className="text-[#6b6b6b] text-sm font-light">Experience premium service</p>
               </div>
@@ -141,7 +141,7 @@ function About() {
       <section className="py-32 px-6 bg-[#f8f6f1]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Our Team</p>
+            <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Our Team</p>
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a]">
               Meet the <span className="text-gradient">People</span>
             </h2>
@@ -159,13 +159,13 @@ function About() {
                     alt={member.name}
                     className="w-44 h-44 mx-auto rounded-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 rounded-full border-2 border-[#c9a962]/0 group-hover:border-[#c9a962]/40 transition-all duration-500"></div>
+                  <div className="absolute inset-0 rounded-full border-2 border-[#0d9488]/0 group-hover:border-[#0d9488]/40 transition-all duration-500"></div>
                 </div>
 
                 <h3 className="text-xl font-display font-semibold text-[#0a0a0a]">
                   {member.name}
                 </h3>
-                <p className="text-[#c9a962] text-xs tracking-[0.15em] uppercase mt-2 font-medium">
+                <p className="text-[#0d9488] text-xs tracking-[0.15em] uppercase mt-2 font-medium">
                   {member.role}
                 </p>
               </div>
@@ -178,7 +178,7 @@ function About() {
       <section className="py-32 px-6 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Location</p>
+            <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Location</p>
             <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a]">
               Find <span className="text-gradient">Us</span>
             </h2>

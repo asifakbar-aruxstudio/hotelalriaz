@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
 @theme {
-  --color-gold: #c9a962;
-  --color-gold-light: #e5d4a1;
-  --color-gold-dark: #a68b3f;
-  --color-charcoal: #0a0a0a;
-  --color-charcoal-light: #1a1a1a;
-  --color-cream: #f8f6f1;
-  --color-muted: #6b6b6b;
-  --font-display: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
-  --font-body: 'DM Sans', 'Montserrat', sans-serif;
+  --color-gold: #0d9488;
+  --color-gold-light: #14b8a6;
+  --color-gold-dark: #0f766e;
+  --color-charcoal: #0f172a;
+  --color-charcoal-light: #1e293b;
+  --color-cream: #fafaf9;
+  --color-muted: #64748b;
+  --font-display: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-body: 'Raleway', 'DM Sans', sans-serif;
 }
 
 html {
@@ -47,7 +47,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gold-text {
-  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold-dark) 100%);
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -62,8 +62,8 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, var(--color-gold) 0%, #d4b86a 50%, var(--color-gold) 100%);
-  color: var(--color-charcoal);
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
+  color: white;
   font-family: var(--font-body);
   font-weight: 600;
   font-size: 0.75rem;
@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 50%, var(--color-gold-light) 100%);
+  background: linear-gradient(135deg, var(--color-gold-dark) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .gold-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(201, 169, 98, 0.35);
+  box-shadow: 0 20px 40px rgba(13, 148, 136, 0.35);
 }
 
 .dark-btn {
@@ -222,7 +222,7 @@ h1, h2, h3, h4, h5, h6 {
 
 ::selection {
   background: var(--color-gold);
-  color: var(--color-charcoal);
+  color: white;
 }
 
 .section-padding {
@@ -263,7 +263,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
+  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 50%, var(--color-gold-dark) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -289,7 +289,7 @@ h1, h2, h3, h4, h5, h6 {
 .input-field:focus {
   outline: none;
   border-color: var(--color-gold);
-  box-shadow: 0 0 0 3px rgba(201, 169, 98, 0.1);
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15);
 }
 
 .input-field::placeholder {

@@ -11,7 +11,7 @@ function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-8">
               <h2 className="text-3xl font-display font-semibold tracking-[0.08em]">
-                AL<span className="text-[#c9a962]">RIAZ</span>
+                AL<span className="text-[#0d9488]">RIAZ</span>
               </h2>
             </div>
             <p className="text-white/50 text-sm leading-relaxed mb-8 font-light">
@@ -19,13 +19,13 @@ function Footer() {
               Where every moment is crafted with elegance and every stay becomes a cherished memory.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-10 h-10 flex items-center justify-center border border-white/10 hover:border-[#c9a962] hover:text-[#c9a962] transition-all duration-300 text-white/60">
+              <a href="#" className="w-10 h-10 flex items-center justify-center border border-white/10 hover:border-[#0d9488] hover:text-[#0d9488] transition-all duration-300 text-white/60">
                 <FaFacebook size={16} />
               </a>
-              <a href="#" className="w-10 h-10 flex items-center justify-center border border-white/10 hover:border-[#c9a962] hover:text-[#c9a962] transition-all duration-300 text-white/60">
+              <a href="#" className="w-10 h-10 flex items-center justify-center border border-white/10 hover:border-[#0d9488] hover:text-[#0d9488] transition-all duration-300 text-white/60">
                 <FaInstagram size={16} />
               </a>
-              <a href="#" className="w-10 h-10 flex items-center justify-center border border-white/10 hover:border-[#c9a962] hover:text-[#c9a962] transition-all duration-300 text-white/60">
+              <a href="#" className="w-10 h-10 flex items-center justify-center border border-white/10 hover:border-[#0d9488] hover:text-[#0d9488] transition-all duration-300 text-white/60">
                 <FaTwitter size={16} />
               </a>
             </div>
@@ -33,20 +33,20 @@ function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-8 text-[#c9a962]">Quick Links</h3>
+            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-8 text-[#0d9488]">Quick Links</h3>
             <ul className="space-y-4">
-              <li><Link to="/" className="text-white/50 hover:text-[#c9a962] transition-colors text-sm font-light">Home</Link></li>
-              <li><Link to="/rooms" className="text-white/50 hover:text-[#c9a962] transition-colors text-sm font-light">Rooms & Suites</Link></li>
-              <li><Link to="/about" className="text-white/50 hover:text-[#c9a962] transition-colors text-sm font-light">About Us</Link></li>
-              <li><Link to="/services" className="text-white/50 hover:text-[#c9a962] transition-colors text-sm font-light">Services</Link></li>
-              <li><Link to="/gallery" className="text-white/50 hover:text-[#c9a962] transition-colors text-sm font-light">Gallery</Link></li>
-              <li><Link to="/contact" className="text-white/50 hover:text-[#c9a962] transition-colors text-sm font-light">Contact</Link></li>
+              <li><Link to="/" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">Home</Link></li>
+              <li><Link to="/rooms" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">Rooms & Suites</Link></li>
+              <li><Link to="/about" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">About Us</Link></li>
+              <li><Link to="/services" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">Services</Link></li>
+              <li><Link to="/gallery" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">Gallery</Link></li>
+              <li><Link to="/contact" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">Contact</Link></li>
             </ul>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-8 text-[#c9a962]">Services</h3>
+            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-8 text-[#0d9488]">Services</h3>
             <ul className="space-y-4">
               <li><span className="text-white/50 text-sm font-light">24/7 Room Service</span></li>
               <li><span className="text-white/50 text-sm font-light">Fine Dining Restaurant</span></li>
@@ -59,10 +59,10 @@ function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-8 text-[#c9a962]">Contact</h3>
+            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-8 text-[#0d9488]">Contact</h3>
             <ul className="space-y-5">
               <li className="flex items-start gap-4">
-                <FaMapMarkerAlt className="text-[#c9a962] mt-0.5" size={14} />
+                <FaMapMarkerAlt className="text-[#0d9488] mt-0.5" size={14} />
                 <span className="text-white/50 text-sm font-light leading-relaxed">
                   Al Riaz Hotel<br />
                   Larkana, Sindh<br />
@@ -70,11 +70,11 @@ function Footer() {
                 </span>
               </li>
               <li className="flex items-center gap-4">
-                <FaPhone className="text-[#c9a962]" size={14} />
+                <FaPhone className="text-[#0d9488]" size={14} />
                 <span className="text-white/50 text-sm font-light">+92 300 1234567</span>
               </li>
               <li className="flex items-center gap-4">
-                <FaEnvelope className="text-[#c9a962]" size={14} />
+                <FaEnvelope className="text-[#0d9488]" size={14} />
                 <span className="text-white/50 text-sm font-light">info@alriazhotel.com</span>
               </li>
             </ul>
@@ -84,15 +84,15 @@ function Footer() {
         {/* Newsletter */}
         <div className="border-t border-white/5 pt-12 mb-12">
           <div className="max-w-xl">
-            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-4 text-[#c9a962]">Newsletter</h3>
+            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-4 text-[#0d9488]">Newsletter</h3>
             <p className="text-white/50 text-sm mb-6 font-light">Subscribe to receive exclusive offers and updates.</p>
             <div className="flex">
               <input 
                 type="email" 
                 placeholder="Your email address" 
-                className="flex-1 bg-white/5 border border-white/10 px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#c9a962] transition-colors font-light"
+                className="flex-1 bg-white/5 border border-white/10 px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#0d9488] transition-colors font-light"
               />
-              <button className="px-8 py-4 bg-[#c9a962] text-[#0a0a0a] font-semibold tracking-[0.12em] uppercase text-xs hover:bg-[#b89b54] transition-colors">
+              <button className="px-8 py-4 bg-[#0d9488] text-[#0a0a0a] font-semibold tracking-[0.12em] uppercase text-xs hover:bg-[#b89b54] transition-colors">
                 Subscribe
               </button>
             </div>
@@ -105,10 +105,10 @@ function Footer() {
             &copy; {new Date().getFullYear()} Al Riaz Hotel. All rights reserved.
           </p>
           <div className="flex gap-8">
-            <Link to="/TermsConditions" className="text-white/30 text-sm hover:text-[#c9a962] transition-colors font-light">
+            <Link to="/TermsConditions" className="text-white/30 text-sm hover:text-[#0d9488] transition-colors font-light">
               Terms & Conditions
             </Link>
-            <span className="text-white/30 text-sm font-light cursor-pointer hover:text-[#c9a962] transition-colors">
+            <span className="text-white/30 text-sm font-light cursor-pointer hover:text-[#0d9488] transition-colors">
               Privacy Policy
             </span>
           </div>

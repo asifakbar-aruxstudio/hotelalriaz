@@ -71,7 +71,7 @@ const Register = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#0a0a0a] text-white py-4 font-semibold tracking-[0.12em] uppercase text-xs hover:bg-[#c9a962] hover:text-[#0a0a0a] transition-all duration-300 mt-2"
+            className="w-full bg-[#0a0a0a] text-white py-4 font-semibold tracking-[0.12em] uppercase text-xs hover:bg-[#0d9488] hover:text-[#0a0a0a] transition-all duration-300 mt-2"
           >
             Register
           </button>
@@ -79,7 +79,7 @@ const Register = () => {
 
         <p className="text-center mt-8 text-[#6b6b6b] text-sm">
           Already have an account?{' '}
-          <Link to="/login" className="text-[#c9a962] font-semibold hover:underline">
+          <Link to="/login" className="text-[#0d9488] font-semibold hover:underline">
             Sign in
           </Link>
         </p>

@@ -13,7 +13,7 @@ function Contact() {
         />
         <div className="hero-overlay"></div>
         <div className="relative text-center px-6">
-          <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 fade-in font-medium">Get in Touch</p>
+          <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 fade-in font-medium">Get in Touch</p>
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold slide-up">
             Contact <span className="text-gradient">Us</span>
           </h1>
@@ -29,7 +29,7 @@ function Contact() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Contact Form */}
             <div className="bg-white p-10 md:p-12 shadow-[0_24px_80px_rgba(0,0,0,0.06)]">
-              <p className="text-[#c9a962] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Send a Message</p>
+              <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Send a Message</p>
               <h2 className="text-3xl font-display font-semibold text-[#0a0a0a] mb-10">
                 We'd Love to <span className="text-gradient">Hear</span> From You
               </h2>
@@ -80,7 +80,7 @@ function Contact() {
 
                 <button
                   type="submit"
-                  className="w-full bg-[#0a0a0a] text-white py-4 font-semibold tracking-[0.12em] uppercase text-xs hover:bg-[#c9a962] hover:text-[#0a0a0a] transition-all duration-300"
+                  className="w-full bg-[#0a0a0a] text-white py-4 font-semibold tracking-[0.12em] uppercase text-xs hover:bg-[#0d9488] hover:text-[#0a0a0a] transition-all duration-300"
                 >
                   Send Message
                 </button>
@@ -92,8 +92,8 @@ function Contact() {
               {/* Main Info Cards */}
               <div className="grid gap-5">
                 <div className="bg-white p-8 shadow-sm flex items-start gap-6 hover:shadow-lg transition-shadow duration-500">
-                  <div className="w-14 h-14 bg-[#c9a962]/10 flex items-center justify-center flex-shrink-0">
-                    <FaMapMarkerAlt className="text-[#c9a962] text-xl" />
+                  <div className="w-14 h-14 bg-[#0d9488]/10 flex items-center justify-center flex-shrink-0">
+                    <FaMapMarkerAlt className="text-[#0d9488] text-xl" />
                   </div>
                   <div>
                     <h4 className="font-display font-semibold text-[#0a0a0a] text-lg mb-2">Address</h4>
@@ -106,8 +106,8 @@ function Contact() {
                 </div>
 
                 <div className="bg-white p-8 shadow-sm flex items-start gap-6 hover:shadow-lg transition-shadow duration-500">
-                  <div className="w-14 h-14 bg-[#c9a962]/10 flex items-center justify-center flex-shrink-0">
-                    <FaPhoneAlt className="text-[#c9a962] text-xl" />
+                  <div className="w-14 h-14 bg-[#0d9488]/10 flex items-center justify-center flex-shrink-0">
+                    <FaPhoneAlt className="text-[#0d9488] text-xl" />
                   </div>
                   <div>
                     <h4 className="font-display font-semibold text-[#0a0a0a] text-lg mb-2">Phone</h4>
@@ -117,8 +117,8 @@ function Contact() {
                 </div>
 
                 <div className="bg-white p-8 shadow-sm flex items-start gap-6 hover:shadow-lg transition-shadow duration-500">
-                  <div className="w-14 h-14 bg-[#c9a962]/10 flex items-center justify-center flex-shrink-0">
-                    <FaEnvelope className="text-[#c9a962] text-xl" />
+                  <div className="w-14 h-14 bg-[#0d9488]/10 flex items-center justify-center flex-shrink-0">
+                    <FaEnvelope className="text-[#0d9488] text-xl" />
                   </div>
                   <div>
                     <h4 className="font-display font-semibold text-[#0a0a0a] text-lg mb-2">Email</h4>
@@ -128,8 +128,8 @@ function Contact() {
                 </div>
 
                 <div className="bg-white p-8 shadow-sm flex items-start gap-6 hover:shadow-lg transition-shadow duration-500">
-                  <div className="w-14 h-14 bg-[#c9a962]/10 flex items-center justify-center flex-shrink-0">
-                    <FaClock className="text-[#c9a962] text-xl" />
+                  <div className="w-14 h-14 bg-[#0d9488]/10 flex items-center justify-center flex-shrink-0">
+                    <FaClock className="text-[#0d9488] text-xl" />
                   </div>
                   <div>
                     <h4 className="font-display font-semibold text-[#0a0a0a] text-lg mb-2">Hours</h4>
@@ -143,13 +143,13 @@ function Contact() {
               <div className="bg-[#0a0a0a] p-10">
                 <h4 className="font-display font-semibold text-white text-lg mb-6">Follow Us</h4>
                 <div className="flex gap-4">
-                  <a href="#" className="w-12 h-12 flex items-center justify-center border border-white/10 text-white hover:border-[#c9a962] hover:text-[#c9a962] transition-all duration-300">
+                  <a href="#" className="w-12 h-12 flex items-center justify-center border border-white/10 text-white hover:border-[#0d9488] hover:text-[#0d9488] transition-all duration-300">
                     <FaFacebook />
                   </a>
-                  <a href="#" className="w-12 h-12 flex items-center justify-center border border-white/10 text-white hover:border-[#c9a962] hover:text-[#c9a962] transition-all duration-300">
+                  <a href="#" className="w-12 h-12 flex items-center justify-center border border-white/10 text-white hover:border-[#0d9488] hover:text-[#0d9488] transition-all duration-300">
                     <FaInstagram />
                   </a>
-                  <a href="#" className="w-12 h-12 flex items-center justify-center border border-white/10 text-white hover:border-[#c9a962] hover:text-[#c9a962] transition-all duration-300">
+                  <a href="#" className="w-12 h-12 flex items-center justify-center border border-white/10 text-white hover:border-[#0d9488] hover:text-[#0d9488] transition-all duration-300">
                     <FaTwitter />
                   </a>
                 </div>
@@ -165,9 +165,11 @@ function Contact() {
           <div className="w-full h-[500px] rounded-xl overflow-hidden shadow-2xl">
             <iframe
               title="Hotel Location"
-              src="https://maps.google.com/maps?q=Larkana%20Pakistan&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              src="https://maps.google.com/maps?q=Al%20Riaz%20Hotel%20Larkana&t=&z=15&ie=UTF8&iwloc=&output=embed"
               className="w-full h-full border-0"
               loading="lazy"
+              allowFullScreen=""
+              referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
         </div>

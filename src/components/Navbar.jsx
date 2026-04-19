@@ -42,7 +42,7 @@ function Navbar() {
           <div className={`text-2xl font-display font-semibold tracking-[0.08em] transition-all duration-500 logo-hover ${
             scrolled ? "text-[#0a0a0a]" : "text-white"
           }`}>
-            AL<span className="text-[#c9a962]">RIAZ</span>
+            AL<span className="text-[#0d9488]">RIAZ</span>
           </div>
           <div className={`text-[10px] tracking-[0.4em] uppercase font-medium transition-colors duration-500 ${
             scrolled ? "text-[#6b6b6b]" : "text-white/60"
@@ -58,13 +58,13 @@ function Navbar() {
                 to={link.to}
                 className={`relative px-4 py-2 text-[13px] font-medium tracking-[0.08em] uppercase transition-all duration-300 ${
                   scrolled
-                    ? "text-[#0a0a0a] hover:text-[#c9a962]"
+                    ? "text-[#0a0a0a] hover:text-[#0d9488]"
                     : "text-white/80 hover:text-white"
                 }`}
                 style={{ fontFamily: "'DM Sans', sans-serif" }}
               >
                 {link.name}
-                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#c9a962] transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-[#0d9488] transition-all duration-300 group-hover:w-full"></span>
               </Link>
             </li>
           ))}
@@ -78,8 +78,8 @@ function Navbar() {
                   to="/admin"
                   className={`px-4 py-2 text-[11px] font-semibold tracking-[0.12em] uppercase transition-all duration-300 ${
                     scrolled
-                      ? "text-[#0a0a0a] hover:text-[#c9a962]"
-                      : "text-white hover:text-[#c9a962]"
+                      ? "text-[#0a0a0a] hover:text-[#0d9488]"
+                      : "text-white hover:text-[#0d9488]"
                   }`}
                 >
                   Dashboard
@@ -90,7 +90,7 @@ function Navbar() {
               </span>
               <button
                 onClick={logout}
-                className="px-5 py-2.5 text-[11px] font-semibold tracking-[0.12em] uppercase bg-[#c9a962] text-[#0a0a0a] hover:bg-[#b89b54] transition-all duration-300"
+                className="px-5 py-2.5 text-[11px] font-semibold tracking-[0.12em] uppercase bg-[#0d9488] text-[#0a0a0a] hover:bg-[#b89b54] transition-all duration-300"
               >
                 Logout
               </button>
@@ -101,15 +101,15 @@ function Navbar() {
                 to="/login"
                 className={`px-4 py-2 text-[11px] font-semibold tracking-[0.12em] uppercase transition-all duration-300 ${
                   scrolled
-                    ? "text-[#0a0a0a] hover:text-[#c9a962]"
-                    : "text-white hover:text-[#c9a962]"
+                    ? "text-[#0a0a0a] hover:text-[#0d9488]"
+                    : "text-white hover:text-[#0d9488]"
                 }`}
               >
                 Login
               </Link>
               <Link
                 to="/register"
-                className="px-6 py-2.5 text-[11px] font-semibold tracking-[0.12em] uppercase bg-[#c9a962] text-[#0a0a0a] hover:bg-[#b89b54] transition-all duration-300"
+                className="px-6 py-2.5 text-[11px] font-semibold tracking-[0.12em] uppercase bg-[#0d9488] text-[#0a0a0a] hover:bg-[#b89b54] transition-all duration-300"
               >
                 Book Now
               </Link>
@@ -133,7 +133,7 @@ function Navbar() {
                 <Link
                   to={link.to}
                   onClick={() => setMenuOpen(false)}
-                  className="px-6 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase text-[#0a0a0a] hover:text-[#c9a962] transition-colors"
+                  className="px-6 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase text-[#0a0a0a] hover:text-[#0d9488] transition-colors"
                 >
                   {link.name}
                 </Link>
@@ -146,7 +146,7 @@ function Navbar() {
                     <Link
                       to="/admin"
                       onClick={() => setMenuOpen(false)}
-                      className="px-6 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase text-[#0a0a0a] hover:text-[#c9a962]"
+                      className="px-6 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase text-[#0a0a0a] hover:text-[#0d9488]"
                     >
                       Dashboard
                     </Link>
@@ -155,7 +155,7 @@ function Navbar() {
                 <li>
                   <button 
                     onClick={() => { logout(); setMenuOpen(false); }} 
-                    className="px-6 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase text-[#c9a962]"
+                    className="px-6 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase text-[#0d9488]"
                   >
                     Logout
                   </button>
@@ -167,7 +167,7 @@ function Navbar() {
                   <Link 
                     to="/login" 
                     onClick={() => setMenuOpen(false)} 
-                    className="px-6 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase text-[#0a0a0a] hover:text-[#c9a962]"
+                    className="px-6 py-3 text-[13px] font-semibold tracking-[0.08em] uppercase text-[#0a0a0a] hover:text-[#0d9488]"
                   >
                     Login
                   </Link>
@@ -176,7 +176,7 @@ function Navbar() {
                   <Link 
                     to="/register" 
                     onClick={() => setMenuOpen(false)} 
-                    className="px-8 py-3 mt-2 text-[11px] font-semibold tracking-[0.12em] uppercase bg-[#c9a962] text-[#0a0a0a]"
+                    className="px-8 py-3 mt-2 text-[11px] font-semibold tracking-[0.12em] uppercase bg-[#0d9488] text-[#0a0a0a]"
                   >
                     Book Now
                   </Link>
