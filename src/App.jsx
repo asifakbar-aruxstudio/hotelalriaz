@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import { AuthProvider } from "./context/AuthContext.jsx";
 import { Chatbot, WhatsAppButton } from "./components/Chatbot.jsx";
+import BackToTop from "./components/BackToTop.jsx";
 
 import Home from "./pages/Home.jsx";
 import Rooms from "./pages/Rooms.jsx";
@@ -40,6 +41,7 @@ function App() {
         <Footer />
         <Chatbot />
         <WhatsAppButton />
+        <BackToTop />
       </div>
     </AuthProvider>
   );
