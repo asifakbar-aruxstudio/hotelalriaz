@@ -95,8 +95,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gold-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px rgba(13, 148, 136, 0.35);
+  transform: translateY(-3px) perspective(1000px) rotateX(2deg);
+  box-shadow: 0 20px 40px rgba(13, 148, 136, 0.35), 0 0 60px rgba(13, 148, 136, 0.2);
 }
 
 .dark-btn {
@@ -120,7 +120,7 @@ h1, h2, h3, h4, h5, h6 {
 .dark-btn:hover {
   background: white;
   color: var(--color-charcoal);
-  transform: translateY(-3px);
+  transform: translateY(-3px) perspective(1000px) rotateX(-2deg);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
@@ -135,6 +135,8 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(0, 0, 0, 0.04);
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
 .luxury-card::before {
@@ -146,12 +148,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .luxury-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.1);
+  transform: translateY(-12px) perspective(1000px) rotateX(3deg) rotateY(-3deg);
+  box-shadow: 0 32px 64px rgba(0, 0, 0, 0.15), 0 0 30px rgba(13, 148, 136, 0.1);
 }
 
 .luxury-card:hover::before {
   border-color: var(--color-gold);
+}
+
+.luxury-card .card-content {
+  transform: translateZ(20px);
+}
+
+.luxury-card .card-image {
+  transform: translateZ(40px);
 }
 
 .fade-in {
@@ -342,4 +352,215 @@ h1, h2, h3, h4, h5, h6 {
 
 .text-shadow-dark {
   text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) perspective(1000px) rotateX(0deg); }
+  50% { transform: translateY(-10px) perspective(1000px) rotateX(1deg); }
+}
+
+@keyframes float3d {
+  0%, 100% { transform: perspective(1500px) rotateY(0deg) rotateX(0deg) translateZ(0); }
+  25% { transform: perspective(1500px) rotateY(1deg) rotateX(1deg) translateZ(5px); }
+  75% { transform: perspective(1500px) rotateY(-1deg) rotateX(-1deg) translateZ(5px); }
+}
+
+.float-animation {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-3d {
+  animation: float3d 8s ease-in-out infinite;
+}
+
+.three-d-card {
+  transform-style: preserve-3d;
+  perspective: 2000px;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.three-d-card:hover {
+  transform: perspective(2000px) rotateX(5deg) rotateY(-5deg) translateZ(20px);
+}
+
+.three-d-card .card-layer {
+  transform: translateZ(var(--depth, 20px));
+}
+
+.three-d-image {
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.three-d-image:hover {
+  transform: perspective(1500px) scale(1.1) translateZ(30px);
+}
+
+.hero-3d {
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+.hero-3d::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(13, 148, 136, 0.1) 0%,
+    transparent 50%,
+    rgba(13, 148, 136, 0.1) 100%
+  );
+  transform: translateZ(100px);
+  pointer-events: none;
+}
+
+.perspective-container {
+  perspective: 1500px;
+  transform-style: preserve-3d;
+}
+
+.perspective-container > * {
+  transform-style: preserve-3d;
+}
+
+.glow-3d {
+  position: relative;
+}
+
+.glow-3d::before {
+  content: '';
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, rgba(13, 148, 136, 0.3) 0%, transparent 70%);
+  transform: translateZ(-30px);
+  filter: blur(20px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.glow-3d:hover::before {
+  opacity: 1;
+}
+
+.flip-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg) translateZ(1px);
+}
+
+.cube-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.parallax-layer {
+  transition: transform 0.1s linear;
+  transform: translateZ(0);
+}
+
+.parallax-layer-1 { transform: translateZ(-50px) scale(1.1); }
+.parallax-layer-2 { transform: translateZ(0px) scale(1); }
+.parallax-layer-3 { transform: translateZ(50px) scale(0.95); }
+
+.spatial-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+
+.spatial-card::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: -10px;
+  bottom: -10px;
+  border: 1px solid rgba(13, 148, 136, 0.2);
+  transform: translateZ(-20px);
+  transition: all 0.5s ease;
+}
+
+.spatial-card:hover::before {
+  transform: translateZ(-30px) translateX(10px) translateY(10px);
+  border-color: rgba(13, 148, 136, 0.4);
+}
+
+.spatial-card:hover {
+  transform: translateY(-10px) translateZ(10px);
+}
+
+.tilt-3d {
+  transform-style: preserve-3d;
+  transition: all 0.4s ease;
+}
+
+.tilt-3d:hover {
+  transform: perspective(1000px) rotateX(5deg) rotateY(-5deg);
+}
+
+.layer-3d {
+  transform: translateZ(var(--layer-depth, 20px));
+}
+
+.facility-3d {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.facility-3d:hover {
+  transform: translateY(-15px) perspective(1000px) rotateX(10deg);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3), 0 0 30px rgba(13, 148, 136, 0.2);
+}
+
+.gallery-3d {
+  transform-style: preserve-3d;
+  perspective: 1500px;
+  transition: all 0.6s ease;
+}
+
+.gallery-3d:hover {
+  transform: perspective(1500px) scale(1.05) translateZ(20px);
+  z-index: 10;
+}
+
+.testimonial-3d {
+  transition: all 0.5s ease;
+  transform-style: preserve-3d;
+}
+
+.testimonial-3d:hover {
+  transform: translateY(-10px) perspective(1000px) rotateX(2deg);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1), 0 0 20px rgba(13, 148, 136, 0.1);
+}
+
+.cta-3d {
+  transform-style: preserve-3d;
+}
+
+.cta-3d::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(13, 148, 136, 0.2) 0%, transparent 50%, rgba(13, 148, 136, 0.2) 100%);
+  transform: translateZ(50px);
+  pointer-events: none;
 }

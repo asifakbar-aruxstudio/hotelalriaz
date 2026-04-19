@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaSwimmer, FaWifi, FaUtensils, FaDumbbell, FaSpa, FaParking, FaStar, FaQuoteLeft, FaArrowRight, FaChevronLeft, FaChevronRight, FaWhatsapp } from "react-icons/fa";
 
@@ -70,6 +70,18 @@ const testimonials = [
 ];
 
 function Home() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 20;
+      const y = (e.clientY / window.innerHeight - 0.5) * 20;
+      setMousePosition({ x, y });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   const handleWhatsAppBook = (roomTitle = null) => {
     const message = roomTitle 
       ? `Hello Al Riaz Hotel, I would like to book the ${roomTitle} for my stay. Please confirm availability.`
@@ -80,9 +92,9 @@ function Home() {
   return (
     <div className="font-body">
       {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <img src={heroImage} alt="Luxury Hotel" className="absolute inset-0 w-full h-full object-cover" />
-        <div className="hero-overlay"></div>
+      <section className="relative h-screen w-full overflow-hidden hero-3d" style={{transform: `perspective(2000px) rotateX(${mousePosition.y * 0.5}deg) rotateY(${mousePosition.x * 0.5}deg)`}}>
+        <img src={heroImage} alt="Luxury Hotel" className="absolute inset-0 w-full h-full object-cover parallax-layer parallax-layer-1" style={{transform: `translate(${-mousePosition.x}px, ${-mousePosition.y}px)`}} />
+        <div className="hero-overlay parallax-layer parallax-layer-2"></div>
         
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
           <div className="max-w-5xl">
@@ -98,13 +110,13 @@ function Home() {
             <div className="flex flex-col sm:flex-row gap-5 justify-center items-center fade-in-up" style={{animationDelay: '0.2s'}}>
               <Link 
                 to="/rooms" 
-                className="gold-btn"
+                className="gold-btn tilt-3d"
               >
                 <span>View Rooms</span>
               </Link>
               <button 
                 onClick={() => handleWhatsAppBook()}
-                className="dark-btn flex items-center gap-2"
+                className="dark-btn flex items-center gap-2 tilt-3d"
               >
                 <FaWhatsapp className="w-4 h-4" /> Book Your Stay
               </button>
@@ -120,7 +132,7 @@ function Home() {
 
       {/* Quick Booking */}
       <section className="relative -mt-24 z-20 px-6">
-        <div className="max-w-6xl mx-auto bg-white shadow-[0_24px_80px_rgba(0,0,0,0.08)]">
+        <div className="max-w-6xl mx-auto bg-white shadow-[0_24px_80px_rgba(0,0,0,0.08)] three-d-card">
           <div className="grid md:grid-cols-5 gap-0">
             <div className="md:col-span-3 p-8 md:p-12">
               <h2 className="text-2xl font-display font-semibold text-[#0a0a0a] mb-2">Reserve Your Experience</h2>
@@ -147,7 +159,7 @@ function Home() {
               <p className="text-5xl font-display font-semibold text-[#0d9488] mb-5">$120</p>
               <button 
                 onClick={() => handleWhatsAppBook()}
-                className="gold-btn w-full flex items-center justify-center gap-2"
+                className="gold-btn w-full flex items-center justify-center gap-2 tilt-3d"
               >
                 <FaWhatsapp className="w-4 h-4" /> <span>Check Availability</span>
               </button>
@@ -161,13 +173,13 @@ function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
-              <div className="absolute -top-6 -left-6 w-full h-full border border-[#0d9488]/20"></div>
+              <div className="absolute -top-6 -left-6 w-full h-full border border-[#0d9488]/20 three-d-card"></div>
               <img
                 src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
                 alt="Luxury Hotel Room"
-                className="w-full h-[550px] object-cover shadow-2xl relative"
+                className="w-full h-[550px] object-cover shadow-2xl relative three-d-image"
               />
-              <div className="absolute -bottom-10 -right-10 bg-[#0d9488] p-10 max-w-xs hidden lg:block">
+              <div className="absolute -bottom-10 -right-10 bg-[#0d9488] p-10 max-w-xs hidden lg:block glow-3d">
                 <p className="text-[#0a0a0a] font-display text-5xl font-semibold mb-2">15+</p>
                 <p className="text-[#0a0a0a]/70 text-xs uppercase tracking-wider font-medium">Years of Excellence</p>
               </div>
@@ -220,8 +232,8 @@ function Home() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {featuredRooms.map((room, index) => (
-              <div key={index} className="luxury-card group">
-                <div className="relative overflow-hidden">
+              <div key={index} className="luxury-card group spatial-card">
+                <div className="relative overflow-hidden three-d-image">
                   <img 
                     src={room.img} 
                     alt={room.title} 
@@ -229,7 +241,7 @@ function Home() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
-                <div className="p-10">
+                <div className="p-10 card-content">
                   <h3 className="text-xl font-display font-semibold text-[#0a0a0a] mb-3">{room.title}</h3>
                   <p className="text-[#6b6b6b] text-sm mb-6 leading-relaxed font-light">{room.desc}</p>
                   <div className="flex items-center justify-between">
@@ -272,10 +284,10 @@ function Home() {
             {facilities.map((facility, index) => (
               <div 
                 key={index} 
-                className="group p-10 border border-white/5 hover:border-[#0d9488]/50 bg-[#0a0a0a]/80 hover:bg-[#0f0f0f] transition-all duration-500 text-center"
+                className="group p-10 border border-white/5 hover:border-[#0d9488]/50 bg-[#0a0a0a]/80 hover:bg-[#0f0f0f] transition-all duration-500 text-center facility-3d"
               >
-                <facility.icon className="w-7 h-7 mx-auto mb-5 text-[#0d9488] transform group-hover:scale-110 transition-transform duration-500" />
-                <p className="text-xs tracking-[0.1em] uppercase font-medium text-white/70 group-hover:text-white transition-colors">{facility.name}</p>
+                <facility.icon className="w-7 h-7 mx-auto mb-5 text-[#0d9488] transform group-hover:scale-110 transition-transform duration-500 layer-3d" style={{'--layer-depth': '30px'}} />
+                <p className="text-xs tracking-[0.1em] uppercase font-medium text-white/70 group-hover:text-white transition-colors layer-3d" style={{'--layer-depth': '20px'}}>{facility.name}</p>
               </div>
             ))}
           </div>
@@ -295,7 +307,7 @@ function Home() {
             {galleryImages.map((img, index) => (
               <div 
                 key={index} 
-                className={`relative overflow-hidden group ${index === 0 ? 'md:row-span-2' : ''}`}
+                className={`relative overflow-hidden group gallery-3d ${index === 0 ? 'md:row-span-2' : ''}`}
               >
                 <img 
                   src={img} 
@@ -305,7 +317,7 @@ function Home() {
                   }`} 
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500 flex items-center justify-center">
-                  <span className="text-white opacity-0 group-hover:opacity-100 text-xs tracking-[0.2em] uppercase transition-opacity duration-500">View</span>
+                  <span className="text-white opacity-0 group-hover:opacity-100 text-xs tracking-[0.2em] uppercase transition-opacity duration-500 layer-3d" style={{'--layer-depth': '30px'}}>View</span>
                 </div>
               </div>
             ))}
@@ -326,10 +338,10 @@ function Home() {
             {testimonials.map((t, index) => (
               <div 
                 key={index} 
-                className="bg-[#f8f6f1] p-10 relative"
+                className="bg-[#f8f6f1] p-10 relative testimonial-3d"
               >
-                <FaQuoteLeft className="text-[#0d9488]/15 text-5xl absolute top-8 left-8" />
-                <div className="flex gap-1 mb-6 mt-6">
+                <FaQuoteLeft className="text-[#0d9488]/15 text-5xl absolute top-8 left-8 layer-3d" style={{'--layer-depth': '10px'}} />
+                <div className="flex gap-1 mb-6 mt-6 layer-3d" style={{'--layer-depth': '20px'}}>
                   {[...Array(5)].map((_, i) => (
                     <FaStar 
                       key={i} 
@@ -337,8 +349,8 @@ function Home() {
                     />
                   ))}
                 </div>
-                <p className="text-[#6b6b6b] leading-relaxed mb-8 italic font-light">"{t.review}"</p>
-                <div className="flex items-center gap-4">
+                <p className="text-[#6b6b6b] leading-relaxed mb-8 italic font-light layer-3d" style={{'--layer-depth': '15px'}}>"{t.review}"</p>
+                <div className="flex items-center gap-4 layer-3d" style={{'--layer-depth': '25px'}}>
                   <img 
                     src={t.photo} 
                     alt={t.name} 
@@ -356,7 +368,7 @@ function Home() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-32 px-6 overflow-hidden">
+      <section className="relative py-32 px-6 overflow-hidden cta-3d">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2070&q=80" 
@@ -375,13 +387,13 @@ function Home() {
           <div className="flex flex-col sm:flex-row gap-5 justify-center">
             <Link 
               to="/rooms" 
-              className="gold-btn"
+              className="gold-btn tilt-3d"
             >
               <span>Book Your Stay</span>
             </Link>
             <Link 
               to="/contact"
-              className="dark-btn"
+              className="dark-btn tilt-3d"
             >
               Contact Us
             </Link>
