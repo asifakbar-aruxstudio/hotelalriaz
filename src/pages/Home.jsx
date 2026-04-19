@@ -89,7 +89,7 @@ function Home() {
             <p className="text-white/70 text-sm tracking-[0.35em] uppercase mb-6 fade-in font-medium">
               Welcome to Al Riaz Hotel
             </p>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-semibold text-white mb-8 slide-up" style={{textShadow: '0 4px 40px rgba(0,0,0,0.4)'}}>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-semibold text-white mb-8 slide-up text-shadow-red">
               Experience <span className="text-gradient">Elegance</span>
             </h1>
             <p className="text-white/80 text-lg md:text-xl mt-4 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
@@ -174,7 +174,7 @@ function Home() {
             </div>
             <div>
               <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">About Our Hotel</p>
-              <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a] mb-6">
+              <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a] mb-6 text-shadow-red">
                 A Legacy of <span className="text-gradient">Luxury</span>
               </h2>
               <p className="text-[#6b6b6b] leading-relaxed mb-6 font-light text-base">
@@ -214,7 +214,7 @@ function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Accommodations</p>
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a]">
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a] text-shadow-red">
               Refined <span className="text-gradient">Rooms</span> & Suites
             </h2>
           </div>
@@ -264,7 +264,7 @@ function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
             <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Amenities</p>
-            <h2 className="text-4xl md:text-5xl font-display font-semibold">
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-shadow-red">
               World-Class <span className="text-gradient">Facilities</span>
             </h2>
           </div>
@@ -287,7 +287,7 @@ function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Gallery</p>
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a]">
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a] text-shadow-red">
               Our <span className="text-gradient">Spaces</span>
             </h2>
           </div>
@@ -318,7 +318,7 @@ function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 font-medium">Testimonials</p>
-            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a]">
+            <h2 className="text-4xl md:text-5xl font-display font-semibold text-[#0a0a0a] text-shadow-red">
               What Our <span className="text-gradient">Guests</span> Say
             </h2>
           </div>
