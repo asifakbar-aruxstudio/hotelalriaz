@@ -26,6 +26,7 @@ function Navbar() {
     { name: "Rooms", to: "/rooms" },
     { name: "Gallery", to: "/gallery" },
     { name: "Services", to: "/services" },
+    { name: "Owner", to: "/owner" },
     { name: "Contact", to: "/contact" },
   ];
 

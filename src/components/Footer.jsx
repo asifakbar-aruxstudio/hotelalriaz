@@ -40,6 +40,7 @@ function Footer() {
               <li><Link to="/about" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">About Us</Link></li>
               <li><Link to="/services" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">Services</Link></li>
               <li><Link to="/gallery" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">Gallery</Link></li>
+              <li><Link to="/owner" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">Owner & Team</Link></li>
               <li><Link to="/contact" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">Contact</Link></li>
             </ul>
           </div>
