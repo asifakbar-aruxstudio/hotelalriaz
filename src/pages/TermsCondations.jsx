@@ -58,23 +58,23 @@ function TermsConditions() {
   return (
     <div className="font-body">
       {/* Hero */}
-      <section className="relative h-[400px] flex items-center justify-center text-white overflow-hidden">
+      <section className="relative h-[250px] sm:h-[350px] lg:h-[400px] flex items-center justify-center text-white overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2070&q=80"
           alt="Terms"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60"></div>
-        <div className="relative text-center px-6">
-          <h1 className="text-5xl md:text-6xl font-display font-semibold slide-up">
+        <div className="relative text-center px-4 sm:px-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-semibold slide-up px-4">
             Terms & <span className="text-[#b8860b]">Conditions</span>
           </h1>
         </div>
       </section>
 
       {/* Content */}
-      <div className="max-w-4xl mx-auto py-20 px-6">
-        <div className="space-y-4">
+      <div className="max-w-4xl mx-auto py-12 sm:py-16 lg:py-20 px-4 sm:px-6">
+        <div className="space-y-3 sm:space-y-4">
           {terms.map((term, index) => (
             <div
               key={index}
@@ -82,15 +82,15 @@ function TermsConditions() {
             >
               <button
                 onClick={() => toggleIndex(index)}
-                className="w-full flex justify-between items-center p-6 bg-white text-[#1a1a1a] font-display font-semibold text-left focus:outline-none hover:bg-[#faf8f5] transition"
+                className="w-full flex justify-between items-center p-4 sm:p-6 bg-white text-[#1a1a1a] font-display font-semibold text-left focus:outline-none hover:bg-[#faf8f5] transition"
               >
-                <span className="text-lg">{term.title}</span>
-                <span className="text-2xl text-[#b8860b]">
+                <span className="text-base sm:text-lg">{term.title}</span>
+                <span className="text-xl sm:text-2xl text-[#b8860b]">
                   {openIndex === index ? "−" : "+"}
                 </span>
               </button>
               {openIndex === index && (
-                <div className="p-6 bg-[#faf8f5] text-[#666] leading-relaxed border-t border-gray-100">
+                <div className="p-4 sm:p-6 bg-[#faf8f5] text-[#666] leading-relaxed border-t border-gray-100 text-sm sm:text-base">
                   {term.content}
                 </div>
               )}
@@ -98,11 +98,11 @@ function TermsConditions() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-[#666] mb-6">Have questions about our policies?</p>
+        <div className="mt-10 sm:mt-12 text-center">
+          <p className="text-[#666] mb-4 sm:mb-6 text-sm sm:text-base">Have questions about our policies?</p>
           <Link 
             to="/contact"
-            className="inline-block px-8 py-3 bg-[#b8860b] text-[#1a1a1a] font-medium tracking-wider uppercase text-sm hover:bg-[#9a7b3f] transition-all duration-300"
+            className="inline-block px-6 sm:px-8 py-3 sm:py-3 bg-[#b8860b] text-[#1a1a1a] font-medium tracking-wider uppercase text-xs sm:text-sm hover:bg-[#9a7b3f] transition-all duration-300"
           >
             Contact Us
           </Link>

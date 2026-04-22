@@ -4,17 +4,17 @@ import { FaFacebook, FaInstagram, FaTwitter, FaPhone, FaEnvelope, FaMapMarkerAlt
 
 function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] text-white pt-20 pb-8">
-      <div className="max-w-[1400px] mx-auto px-6 md:px-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-20">
+    <footer className="bg-[#0a0a0a] text-white pt-16 sm:pt-20 pb-8">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 md:px-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12 lg:gap-16 mb-16 sm:mb-20">
           {/* Logo & About */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-2 mb-8">
-              <h2 className="text-3xl font-display font-semibold tracking-[0.08em]">
+          <div className="lg:col-span-1 sm:col-span-2">
+            <div className="flex items-center gap-2 mb-6 sm:mb-8">
+              <h2 className="text-2xl sm:text-3xl font-display font-semibold tracking-[0.08em]">
                 AL<span className="text-[#0d9488]">RIAZ</span>
               </h2>
             </div>
-            <p className="text-white/50 text-sm leading-relaxed mb-8 font-light">
+            <p className="text-white/50 text-sm leading-relaxed mb-6 sm:mb-8 font-light">
               Experience the pinnacle of luxury hospitality at Al Riaz Hotel Larkana. 
               Where every moment is crafted with elegance and every stay becomes a cherished memory.
             </p>
@@ -33,8 +33,8 @@ function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-8 text-[#0d9488]">Quick Links</h3>
-            <ul className="space-y-4">
+            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-6 sm:mb-8 text-[#0d9488]">Quick Links</h3>
+            <ul className="space-y-3 sm:space-y-4">
               <li><Link to="/" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">Home</Link></li>
               <li><Link to="/rooms" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">Rooms & Suites</Link></li>
               <li><Link to="/about" className="text-white/50 hover:text-[#0d9488] transition-colors text-sm font-light">About Us</Link></li>
@@ -47,8 +47,8 @@ function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-8 text-[#0d9488]">Services</h3>
-            <ul className="space-y-4">
+            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-6 sm:mb-8 text-[#0d9488]">Services</h3>
+            <ul className="space-y-3 sm:space-y-4">
               <li><span className="text-white/50 text-sm font-light">24/7 Room Service</span></li>
               <li><span className="text-white/50 text-sm font-light">Fine Dining Restaurant</span></li>
               <li><span className="text-white/50 text-sm font-light">Luxury Spa & Wellness</span></li>
@@ -60,9 +60,9 @@ function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-8 text-[#0d9488]">Contact</h3>
-            <ul className="space-y-5">
-              <li className="flex items-start gap-4">
+            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-6 sm:mb-8 text-[#0d9488]">Contact</h3>
+            <ul className="space-y-4 sm:space-y-5">
+              <li className="flex items-start gap-3 sm:gap-4">
                 <FaMapMarkerAlt className="text-[#0d9488] mt-0.5" size={14} />
                 <span className="text-white/50 text-sm font-light leading-relaxed">
                   Al Riaz Hotel<br />
@@ -70,11 +70,11 @@ function Footer() {
                   Pakistan
                 </span>
               </li>
-              <li className="flex items-center gap-4">
+              <li className="flex items-center gap-3 sm:gap-4">
                 <FaPhone className="text-[#0d9488]" size={14} />
                 <span className="text-white/50 text-sm font-light">+92 300 1234567</span>
               </li>
-              <li className="flex items-center gap-4">
+              <li className="flex items-center gap-3 sm:gap-4">
                 <FaEnvelope className="text-[#0d9488]" size={14} />
                 <span className="text-white/50 text-sm font-light">info@alriazhotel.com</span>
               </li>
@@ -83,17 +83,17 @@ function Footer() {
         </div>
 
         {/* Newsletter */}
-        <div className="border-t border-white/5 pt-12 mb-12">
+        <div className="border-t border-white/5 pt-10 sm:pt-12 mb-10 sm:mb-12">
           <div className="max-w-xl">
-            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-4 text-[#0d9488]">Newsletter</h3>
-            <p className="text-white/50 text-sm mb-6 font-light">Subscribe to receive exclusive offers and updates.</p>
-            <div className="flex">
+            <h3 className="text-xs font-semibold tracking-[0.25em] uppercase mb-3 sm:mb-4 text-[#0d9488]">Newsletter</h3>
+            <p className="text-white/50 text-sm mb-4 sm:mb-6 font-light">Subscribe to receive exclusive offers and updates.</p>
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-0">
               <input 
                 type="email" 
                 placeholder="Your email address" 
-                className="flex-1 bg-white/5 border border-white/10 px-5 py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#0d9488] transition-colors font-light"
+                className="flex-1 bg-white/5 border border-white/10 px-4 sm:px-5 py-3 sm:py-4 text-sm text-white placeholder-white/30 focus:outline-none focus:border-[#0d9488] transition-colors font-light"
               />
-              <button className="px-8 py-4 bg-[#0d9488] text-[#0a0a0a] font-semibold tracking-[0.12em] uppercase text-xs hover:bg-[#b89b54] transition-colors">
+              <button className="px-6 sm:px-8 py-3 sm:py-4 bg-[#0d9488] text-[#0a0a0a] font-semibold tracking-[0.12em] uppercase text-xs hover:bg-[#b89b54] transition-colors">
                 Subscribe
               </button>
             </div>
@@ -101,11 +101,11 @@ function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-white/30 text-sm font-light">
+        <div className="border-t border-white/5 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-white/30 text-sm font-light text-center md:text-left">
             &copy; {new Date().getFullYear()} Al Riaz Hotel. All rights reserved.
           </p>
-          <div className="flex gap-8">
+          <div className="flex gap-6 sm:gap-8">
             <Link to="/TermsConditions" className="text-white/30 text-sm hover:text-[#0d9488] transition-colors font-light">
               Terms & Conditions
             </Link>

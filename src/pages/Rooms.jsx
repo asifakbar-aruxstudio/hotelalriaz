@@ -89,26 +89,26 @@ function Rooms() {
 
   return (
     <div className="font-body">
-      <section className="relative h-[500px] flex items-center justify-center text-white overflow-hidden">
+      <section className="relative h-[300px] sm:h-[400px] lg:h-[500px] flex items-center justify-center text-white overflow-hidden">
         <img
           src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2070&q=80"
           alt="Luxury Rooms"
           className="absolute inset-0 w-full h-full object-cover"
         />
         <div className="hero-overlay"></div>
-        <div className="relative text-center px-6">
-          <p className="text-[#0d9488] text-sm tracking-[0.35em] uppercase mb-5 fade-in font-medium">Accommodations</p>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-semibold slide-up">
+        <div className="relative text-center px-4 sm:px-6">
+          <p className="text-[#0d9488] text-xs sm:text-sm tracking-[0.35em] uppercase mb-4 sm:mb-5 fade-in font-medium">Accommodations</p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-semibold slide-up px-4">
             Luxury <span className="text-gradient">Rooms</span>
           </h1>
-          <p className="mt-6 text-lg max-w-xl mx-auto text-white/80 font-light">
+          <p className="mt-4 sm:mt-6 text-sm sm:text-lg max-w-xl mx-auto text-white/80 font-light px-4">
             Discover comfort and elegance in our meticulously designed rooms
           </p>
         </div>
       </section>
 
-      <section className="max-w-7xl mx-auto py-32 px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="max-w-7xl mx-auto py-16 sm:py-24 lg:py-32 px-4 sm:px-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {rooms.map((room) => (
             <div
               key={room._id}
@@ -118,35 +118,35 @@ function Rooms() {
                 <img
                   src={room.image}
                   alt={room.title}
-                  className="w-full h-72 object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-56 sm:h-64 lg:h-72 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute top-5 right-5 bg-[#0d9488] text-[#0a0a0a] px-4 py-1.5 text-[10px] font-semibold tracking-[0.1em] uppercase">
+                <div className="absolute top-4 sm:top-5 right-4 sm:right-5 bg-[#0d9488] text-[#0a0a0a] px-3 sm:px-4 py-1 sm:py-1.5 text-[10px] font-semibold tracking-[0.1em] uppercase">
                   Available
                 </div>
               </div>
-              <div className="p-10">
-                <h3 className="text-xl font-display font-semibold text-[#0a0a0a] mb-3">
+              <div className="p-6 sm:p-8 lg:p-10">
+                <h3 className="text-lg sm:text-xl font-display font-semibold text-[#0a0a0a] mb-2 sm:mb-3">
                   {room.title}
                 </h3>
-                <p className="text-[#6b6b6b] text-sm mb-4 leading-relaxed font-light">
+                <p className="text-[#6b6b6b] text-sm mb-3 sm:mb-4 leading-relaxed font-light line-clamp-2 sm:line-clamp-none">
                   {room.description}
                 </p>
-                <div className="flex flex-wrap gap-3 mb-5">
+                <div className="flex flex-wrap gap-2 sm:gap-3 mb-4 sm:mb-5">
                   {room.features.map((feature, idx) => (
-                    <span key={idx} className="flex items-center gap-1.5 text-xs text-[#6b6b6b] bg-[#f8f6f1] px-3 py-1.5">
+                    <span key={idx} className="flex items-center gap-1.5 text-xs text-[#6b6b6b] bg-[#f8f6f1] px-2 sm:px-3 py-1 sm:py-1.5">
                       <FaWifi className="w-3 h-3" /> {feature}
                     </span>
                   ))}
                 </div>
-                <div className="flex items-center justify-between pt-5 border-t border-gray-100">
-                  <p className="text-[#0d9488] font-display font-semibold text-2xl">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-0 pt-4 sm:pt-5 border-t border-gray-100">
+                  <p className="text-[#0d9488] font-display font-semibold text-xl sm:text-2xl">
                     PKR {room.price.toLocaleString()}<span className="text-[#6b6b6b] text-sm font-normal ml-1">/ night</span>
                   </p>
                   <button
                     onClick={() => handleWhatsAppBook(room)}
-                    className="px-5 py-2.5 bg-[#25D366] text-white text-[11px] font-semibold tracking-[0.1em] uppercase hover:bg-[#1da851] transition-all duration-300 flex items-center gap-2"
+                    className="px-4 sm:px-5 py-2 sm:py-2.5 bg-[#25D366] text-white text-[10px] sm:text-[11px] font-semibold tracking-[0.1em] uppercase hover:bg-[#1da851] transition-all duration-300 flex items-center justify-center gap-2"
                   >
-                    <FaWhatsapp /> Book via WhatsApp
+                    <FaWhatsapp className="w-3 sm:w-4 h-3 sm:h-4" /> Book via WhatsApp
                   </button>
                 </div>
               </div>
