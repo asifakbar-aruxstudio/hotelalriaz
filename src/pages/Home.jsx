@@ -133,8 +133,8 @@ function Home() {
       </section>
 
       {/* Quick Booking */}
-      <section className="relative -mt-24 z-20 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto bg-white shadow-[0_24px_80px_rgba(0,0,0,0.08)] three-d-card">
+      <section className="relative -mt-20 sm:-mt-24 z-20 px-3 sm:px-6 py-6 sm:py-0">
+        <div className="max-w-6xl mx-auto bg-white shadow-[0_24px_80px_rgba(0,0,0,0.08)] three-d-card rounded-lg overflow-hidden">
           <div className="lg:grid lg:grid-cols-5 gap-0">
             <div className="lg:col-span-3 p-6 sm:p-8 lg:p-12">
               <h2 className="text-xl sm:text-2xl lg:text-3xl font-display font-semibold text-[#0a0a0a] mb-2">Reserve Your Experience</h2>
@@ -232,7 +232,7 @@ function Home() {
               Refined <span className="text-gradient">Rooms</span> & Suites
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {featuredRooms.map((room, index) => (
               <div key={index} className="luxury-card group spatial-card">
                 <div className="relative overflow-hidden three-d-image">
@@ -282,7 +282,7 @@ function Home() {
               World-Class <span className="text-gradient">Facilities</span>
             </h2>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-px bg-white/5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-px bg-white/5">
             {facilities.map((facility, index) => (
               <div 
                 key={index} 
