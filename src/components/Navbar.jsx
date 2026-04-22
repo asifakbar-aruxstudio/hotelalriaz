@@ -39,19 +39,7 @@ function Navbar() {
       }`}
     >
       <div className="max-w-[1400px] mx-auto flex justify-between items-center px-6 md:px-12">
-        <Link to="/" className="flex items-center gap-2">
-          <div className={`text-[10px] tracking-[0.4em] uppercase font-medium transition-colors duration-500 ${
-            scrolled ? "text-[#6b6b6b]" : "text-white/60"
-          }`}>
-            Hotel
-          </div>
-          <div className={`text-2xl font-display font-semibold tracking-[0.08em] transition-all duration-500 logo-hover ${
-            scrolled ? "text-[#0a0a0a]" : "text-white"
-          }`}>
-            AL<span className="text-[#0d9488]">RIAZ</span>
-          </div>
-        </Link>
-
+        <img src="/Hotel Al Riaz.jpeg" alt="Hotel Logo" className="h-8 md:h-10 rounded-xl" />
         <ul className="hidden lg:flex items-center gap-0.5">
           {links.map((link, index) => (
             <li key={index}>
