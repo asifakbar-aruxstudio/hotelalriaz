@@ -100,8 +100,10 @@ function Home() {
         
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6">
           <div className="max-w-5xl">
-            <p className="text-white/70 text-xs sm:text-sm tracking-[0.35em] uppercase mb-4 sm:mb-6 fade-in font-medium">
-              Welcome to Al Riaz Hotel
+            <p className="text-white/70 text-lg sm:text-sm tracking-[0.35em] 
+            uppercase mb-4 sm:mb-6 fade-in font-medium shadow-lg backdrop-blur-sm px-3 
+            py-1 rounded-lg text-shadow-red">
+              Welcome to Hotel Al Riaz larkana Sindh Pakistan
             </p>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl xl:text-8xl font-display font-semibold text-white mb-4 sm:mb-6 slide-up text-shadow-red px-2">
               Experience <span className="text-gradient">Elegance</span>
@@ -176,12 +178,14 @@ function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative order-2 lg:order-1">
               <div className="absolute -top-4 sm:-top-6 -left-4 sm:-left-6 w-full h-full border border-[#0d9488]/20 three-d-card"></div>
-<ImageWithFallback
+              <ImageWithFallback
                   src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
                   alt="Luxury Hotel Room"
-                  className="w-full h-[300px] sm:h-[400px] lg:h-[550px] object-cover shadow-2xl relative three-d-image"
+                  className="w-full h-[300px] sm:h-[400px] lg:h-[550px] object-cover shadow-2xl 
+                  relative three-d-image"
                 />
-              <div className="absolute -bottom-6 sm:-10 -right-6 sm:-right-10 bg-[#0d9488] p-6 sm:p-10 max-w-xs hidden lg:block glow-3d">
+              <div className="absolute-bottom-6 sm:-10 -right-6 sm:-right-10 bg-[#0d9488] p-6 sm:p-10 
+              max-w-xs hidden lg:block glow-3d">
                 <p className="text-[#0a0a0a] font-display text-4xl sm:text-5xl font-semibold mb-2">15+</p>
                 <p className="text-[#0a0a0a]/70 text-xs uppercase tracking-wider font-medium">Years of Excellence</p>
               </div>
