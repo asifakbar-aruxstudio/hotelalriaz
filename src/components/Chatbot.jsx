@@ -31,13 +31,13 @@ const responses = {
 };
 
 const keywords = {
-  hi: "greeting", hello: "greeting", hey: "greeting", hey: "greeting",
+  hi: "greeting", hello: "greeting", hey: "greeting",
   room: "rooms", rooms: "rooms", suite: "rooms", suites: "rooms",
   book: "booking", booking: "booking", reserve: "booking",
-  price: "price", cost: "cost", rate: "rate", rates: "rates",
-  checkin: "checkin", "check-in": "check-in", checkin: "checkin",
-  location: "location", address: "address", where: "location",
-  contact: "contact", phone: "contact", call: "contact", email: "email",
+  price: "price", cost: "price", rate: "price", rates: "price",
+  checkin: "checkin", "check-in": "checkin", 
+  location: "location", address: "location", where: "location",
+  contact: "contact", phone: "contact", call: "contact", email: "contact",
   service: "services", services: "services", amenity: "services", amenities: "services",
   wifi: "wifi", internet: "wifi",
   parking: "parking", valet: "parking",

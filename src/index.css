@@ -76,6 +76,26 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
 }
 
+.gold-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-light) 50%, var(--color-gold) 100%);
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  min-height: 48px;
+}
+
 .gold-btn::before {
   content: '';
   position: absolute;
@@ -115,6 +135,7 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 48px;
 }
 
 .dark-btn:hover {
@@ -294,6 +315,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.9rem;
   color: var(--color-charcoal);
   transition: all 0.3s ease;
+  min-height: 48px;
 }
 
 .input-field:focus {

@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaSwimmer, FaWifi, FaUtensils, FaDumbbell, FaSpa, FaParking, FaStar, FaQuoteLeft, FaArrowRight, FaChevronLeft, FaChevronRight, FaWhatsapp } from "react-icons/fa";
+import { FaSwimmer, FaWifi, FaUtensils, FaDumbbell, FaSpa, FaParking, FaStar, FaQuoteLeft, FaArrowRight, FaChevronLeft, FaChevronRight, FaWhatsapp, FaHotel } from "react-icons/fa";
 
 const WHATSAPP_NUMBER = "+923153933660";
-   
+
+const PLACEHOLDER_IMG = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 300'%3E%3Crect fill='%23e5e5e5' width='400' height='300'/%3E%3Ctext fill='%23999' font-family='sans-serif' font-size='14' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EImage unavailable%3C/text%3E%3C/svg%3E";
+
+function ImageWithFallback({ src, alt, className, ...props }) {
+  const [error, setError] = useState(false);
+  return (
+    <img 
+      src={error ? PLACEHOLDER_IMG : src} 
+      alt={alt} 
+      className={className}
+      onError={() => setError(true)}
+      {...props}
+    />
+  );
+}
+
 const heroImage = "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=2070&q=80";
 const featuredRooms = [
   {
@@ -80,7 +95,7 @@ function Home() {
     <div className="font-body">
       {/* Hero Section */}
       <section className="relative h-[60vh] sm:h-[70vh] lg:h-screen w-full overflow-hidden hero-3d">
-        <img src={heroImage} alt="Luxury Hotel" className="absolute inset-0 w-full h-full object-cover" />
+        <ImageWithFallback src={heroImage} alt="Luxury Hotel" className="absolute inset-0 w-full h-full object-cover" />
         <div className="hero-overlay"></div>
         
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6">
@@ -120,28 +135,28 @@ function Home() {
       {/* Quick Booking */}
       <section className="relative -mt-24 z-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto bg-white shadow-[0_24px_80px_rgba(0,0,0,0.08)] three-d-card">
-          <div className="flex flex-col md:grid md:grid-cols-5">
-            <div className="md:col-span-3 p-6 sm:p-8 md:p-12">
-              <h2 className="text-xl sm:text-2xl font-display font-semibold text-[#0a0a0a] mb-2">Reserve Your Experience</h2>
+          <div className="lg:grid lg:grid-cols-5 gap-0">
+            <div className="lg:col-span-3 p-6 sm:p-8 lg:p-12">
+              <h2 className="text-xl sm:text-2xl lg:text-3xl font-display font-semibold text-[#0a0a0a] mb-2">Reserve Your Experience</h2>
               <p className="text-[#6b6b6b] mb-4 sm:mb-6 font-light text-sm sm:text-base">Book your stay at the best rates guaranteed</p>
-              <form className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+              <form className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 <input 
                   type="text" 
                   placeholder="Your Name" 
-                  className="input-field" 
+                  className="input-field min-h-[48px]" 
                 />
                 <input 
                   type="email" 
                   placeholder="Email Address" 
-                  className="input-field" 
+                  className="input-field min-h-[48px]" 
                 />
                 <input 
                   type="date" 
-                  className="input-field" 
+                  className="input-field min-h-[48px]" 
                 />
               </form>
             </div>
-            <div className="md:col-span-2 bg-[#0a0a0a] p-6 sm:p-8 md:p-12 flex flex-col justify-center items-center">
+            <div className="lg:col-span-2 bg-[#0a0a0a] p-6 sm:p-8 lg:p-12 flex flex-col justify-center items-center">
               <p className="text-white/50 text-xs sm:text-sm tracking-wider uppercase mb-2 font-medium">Starting from</p>
               <p className="text-4xl sm:text-5xl font-display font-semibold text-[#0d9488] mb-4 sm:mb-5">$120</p>
               <button 
@@ -161,11 +176,11 @@ function Home() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative order-2 lg:order-1">
               <div className="absolute -top-4 sm:-top-6 -left-4 sm:-left-6 w-full h-full border border-[#0d9488]/20 three-d-card"></div>
-              <img
-                src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
-                alt="Luxury Hotel Room"
-                className="w-full h-[300px] sm:h-[400px] lg:h-[550px] object-cover shadow-2xl relative three-d-image"
-              />
+<ImageWithFallback
+                  src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80"
+                  alt="Luxury Hotel Room"
+                  className="w-full h-[300px] sm:h-[400px] lg:h-[550px] object-cover shadow-2xl relative three-d-image"
+                />
               <div className="absolute -bottom-6 sm:-10 -right-6 sm:-right-10 bg-[#0d9488] p-6 sm:p-10 max-w-xs hidden lg:block glow-3d">
                 <p className="text-[#0a0a0a] font-display text-4xl sm:text-5xl font-semibold mb-2">15+</p>
                 <p className="text-[#0a0a0a]/70 text-xs uppercase tracking-wider font-medium">Years of Excellence</p>
@@ -182,16 +197,16 @@ function Home() {
               <p className="text-[#6b6b6b] leading-relaxed mb-8 sm:mb-10 font-light text-sm sm:text-base">
                 Whether you're traveling for business or leisure, our dedicated team ensures your stay exceeds expectations, creating memories that last a lifetime.
               </p>
-              <div className="flex gap-6 sm:gap-10 sm:gap-12 mb-8 sm:mb-10">
-                <div>
+              <div className="flex flex-wrap gap-6 sm:gap-10 lg:gap-12 mb-8 sm:mb-10">
+                <div className="min-w-[100px]">
                   <p className="text-3xl sm:text-4xl font-display font-semibold text-[#0d9488]">150+</p>
                   <p className="text-[#6b6b6b] text-sm mt-1">Luxury Rooms</p>
                 </div>
-                <div>
+                <div className="min-w-[100px]">
                   <p className="text-3xl sm:text-4xl font-display font-semibold text-[#0d9488]">98%</p>
                   <p className="text-[#6b6b6b] text-sm mt-1">Guest Satisfaction</p>
                 </div>
-                <div>
+                <div className="min-w-[100px]">
                   <p className="text-3xl sm:text-4xl font-display font-semibold text-[#0d9488]">24/7</p>
                   <p className="text-[#6b6b6b] text-sm mt-1">Concierge</p>
                 </div>
@@ -221,7 +236,7 @@ function Home() {
             {featuredRooms.map((room, index) => (
               <div key={index} className="luxury-card group spatial-card">
                 <div className="relative overflow-hidden three-d-image">
-                  <img 
+                  <ImageWithFallback 
                     src={room.img} 
                     alt={room.title} 
                     className="w-full h-56 sm:h-64 lg:h-80 object-cover transition-transform duration-700 group-hover:scale-110" 
@@ -290,13 +305,13 @@ function Home() {
               Our <span className="text-gradient">Spaces</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
             {galleryImages.map((img, index) => (
               <div 
                 key={index} 
                 className={`relative overflow-hidden group gallery-3d ${index === 0 ? 'sm:row-span-2' : ''}`}
               >
-                <img 
+                <ImageWithFallback 
                   src={img} 
                   alt="Hotel Gallery" 
                   className={`w-full object-cover transition-transform duration-700 group-hover:scale-110 ${
@@ -321,7 +336,7 @@ function Home() {
               What Our <span className="text-gradient">Guests</span> Say
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {testimonials.map((t, index) => (
               <div 
                 key={index} 
@@ -338,7 +353,7 @@ function Home() {
                 </div>
                 <p className="text-[#6b6b6b] leading-relaxed mb-6 sm:mb-8 italic font-light text-sm sm:text-base layer-3d" style={{'--layer-depth': '15px'}}>"{t.review}"</p>
                 <div className="flex items-center gap-3 sm:gap-4 layer-3d" style={{'--layer-depth': '25px'}}>
-                  <img 
+                  <ImageWithFallback 
                     src={t.photo} 
                     alt={t.name} 
                     className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover" 
@@ -357,7 +372,7 @@ function Home() {
       {/* CTA */}
       <section className="relative py-20 sm:py-24 lg:py-32 px-4 sm:px-6 overflow-hidden cta-3d">
         <div className="absolute inset-0">
-          <img 
+          <ImageWithFallback 
             src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2070&q=80" 
             alt="Luxury Hotel" 
             className="w-full h-full object-cover" 
